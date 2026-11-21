@@ -62,7 +62,7 @@ export function MenuTabs() {
           ) : (
             <p className="mt-6 inline-flex items-center gap-2 rounded-sm border border-dashed border-cng-black/20 px-4 py-3 text-sm text-cng-grey-500">
               <FileText className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              Full menu details coming soon — please call us for today&apos;s offering.
+              Full menu details coming soon; please call us for today&apos;s offering.
             </p>
           )}
         </div>

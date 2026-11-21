@@ -40,7 +40,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/80 sm:text-xl"
         >
-          One of the most iconic corners on the Isle of Man TT course — a legendary pub,
+          One of the most iconic corners on the Isle of Man TT course, a legendary pub,
           restaurant and race-day landmark where Manx hospitality meets motorsport history,
           high above the island&apos;s dramatic countryside.
         </motion.p>
@@ -64,7 +64,7 @@ export function Hero() {
         >
           <Image
             src="/awards/awards-for-exel.png"
-            alt="Isle of Man Newspapers Awards for Excellence — Finalist"
+            alt="Isle of Man Newspapers Awards for Excellence: Finalist"
             width={140}
             height={140}
             style={{ width: 140, height: 140 }}

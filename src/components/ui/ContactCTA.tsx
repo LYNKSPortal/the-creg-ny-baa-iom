@@ -17,7 +17,7 @@ const infoChips = [
 
 export function ContactCTA({
   title = "Plan Your Visit",
-  description = "Whatever brings you to the Creg Ny Baa — a race day, a family meal or a private celebration — our team is on hand to help.",
+  description = "Whatever brings you to the Creg Ny Baa: a race day, a family meal or a private celebration, our team is on hand to help.",
   showBooking = true,
   emailSubject,
 }: ContactCTAProps) {

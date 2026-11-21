@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 
 /**
- * Festive menus and opening arrangements — only renders within the active
+ * Festive menus and opening arrangements, only renders within the active
  * season configured in src/data/christmas.ts, so it never appears as current
  * information once the season has passed.
  */
@@ -21,7 +21,7 @@ export function ChristmasSection() {
         <SectionHeading
           eyebrow={christmasSeason.availability}
           title="Christmas at the Creg"
-          description="Festive menus, a private function room for your Christmas party, and our popular workplace Festive Brunch — all available this December."
+          description="Festive menus, a private function room for your Christmas party, and our popular workplace Festive Brunch, all available this December."
           light
           className="mt-4"
         />
@@ -77,7 +77,7 @@ export function ChristmasSection() {
           <h3 className="font-display text-xl font-bold uppercase tracking-tight text-white">Festive Brunch</h3>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">{christmasSeason.festiveBrunch.description}</p>
           <p className="mt-2 text-sm text-white/70">
-            <span className="font-semibold text-cng-gold">{christmasSeason.festiveBrunch.price}</span> — {christmasSeason.festiveBrunch.delivery}
+            <span className="font-semibold text-cng-gold">{christmasSeason.festiveBrunch.price}</span>: {christmasSeason.festiveBrunch.delivery}
           </p>
         </div>
 

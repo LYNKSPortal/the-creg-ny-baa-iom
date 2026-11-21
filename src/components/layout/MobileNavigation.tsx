@@ -36,9 +36,12 @@ export function MobileNavigation() {
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         aria-label="Open navigation menu"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-cng-black/15 text-cng-black"
+        className="inline-flex items-center gap-2 text-cng-black"
       >
-        <Menu className="h-5 w-5" aria-hidden="true" />
+        <span className="text-sm font-semibold uppercase tracking-wide">Menu</span>
+        <span className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-cng-black/15">
+          <Menu className="h-5 w-5" aria-hidden="true" />
+        </span>
       </button>
 
       <AnimatePresence>
@@ -55,7 +58,7 @@ export function MobileNavigation() {
             transition={{ duration: 0.2 }}
           >
             <div className="flex items-center justify-between px-5 py-4">
-              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={100} height={80} style={{ width: 100, height: "auto" }} />
+              <Image src="/white-logo.png" alt={`${siteConfig.name} logo`} width={100} height={80} style={{ width: 100, height: "auto" }} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

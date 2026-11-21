@@ -72,9 +72,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        {/* Seasonal Christmas announcement — dates/copy live in src/data/christmas.ts, update each year. */}
+        {/* Seasonal Christmas announcement, dates/copy live in src/data/christmas.ts, update each year. */}
         <AnnouncementBanner startDate={christmasSeason.activeFrom} endDate={christmasSeason.activeUntil} href="/menus#christmas">
-          Our Christmas menus are now available, {christmasSeason.availability.toLowerCase()} — view menus &amp; book your festive table.
+          Our Christmas menus are now available, {christmasSeason.availability.toLowerCase()}: view menus &amp; book your festive table.
         </AnnouncementBanner>
         <Header />
         <main id="main-content" className="flex-1">

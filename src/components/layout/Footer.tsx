@@ -37,7 +37,7 @@ export function Footer() {
               style={{ width: 100, height: "auto" }}
             />
             <p className="mt-4 text-sm leading-relaxed text-white/65">
-              An Isle of Man icon — legendary TT race corner, traditional Manx pub, home-cooked
+              An Isle of Man icon: legendary TT race corner, traditional Manx pub, home-cooked
               food and premier events venue on the Mountain Road.
             </p>
             <Image

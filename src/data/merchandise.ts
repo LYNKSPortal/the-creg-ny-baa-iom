@@ -1,5 +1,5 @@
 // Real product photography from the venue's own merchandise display.
-// Prices are still to be confirmed — update `price` once set.
+// Prices are still to be confirmed, update `price` once set.
 
 export type StockStatus = "In Stock" | "Limited Availability" | "Coming Soon";
 
@@ -19,7 +19,7 @@ export const products: Product[] = [
     name: '"The Creg" Hoodie',
     price: "Price TBC",
     stock: "In Stock",
-    description: "A soft, heavyweight hoodie embroidered with \"The Creg\" — a popular souvenir for TT visitors and regulars alike.",
+    description: "A soft, heavyweight hoodie embroidered with \"The Creg\", a popular souvenir for TT visitors and regulars alike.",
     image: "/images/merch/hoodie-front.jpg",
     imageAlt: '"The Creg" branded hoodie on display',
   },
@@ -28,7 +28,7 @@ export const products: Product[] = [
     name: "Isle of Man Road Racing Hoodie",
     price: "Price TBC",
     stock: "In Stock",
-    description: "A zip-up hoodie with a bold \"Isle of Man Road Racing\" back print — perfect for cooler trackside days on the Mountain Road.",
+    description: "A zip-up hoodie with a bold \"Isle of Man Road Racing\" back print, perfect for cooler trackside days on the Mountain Road.",
     image: "/images/merch/hoodie-back.jpg",
     imageAlt: "Isle of Man Road Racing zip hoodie, back print",
   },
@@ -37,7 +37,7 @@ export const products: Product[] = [
     name: "Creg Ny Baa Bobble Hat",
     price: "Price TBC",
     stock: "In Stock",
-    description: "A warm knitted bobble hat with the Creg Ny Baa name woven in — a trackside essential during race week.",
+    description: "A warm knitted bobble hat with the Creg Ny Baa name woven in, a trackside essential during race week.",
     image: "/images/merch/bobble-hat-front.jpg",
     imageAlt: "Creg Ny Baa branded bobble hat",
   },
@@ -53,4 +53,4 @@ export const products: Product[] = [
 ];
 
 export const merchandiseNote =
-  "Our full merchandise range is available behind the bar — product names and photography shown here are real, but prices are still to be confirmed online. To purchase or check current availability, please enquire by email and our team will be happy to help.";
+  "Our full merchandise range is available behind the bar; product names and photography shown here are real, but prices are still to be confirmed online. To purchase or check current availability, please enquire by email and our team will be happy to help.";

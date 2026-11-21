@@ -10,7 +10,7 @@ type PlaceholderImageProps = {
 /**
  * Stylised, non-photographic placeholder used until authentic venue
  * photography is supplied. Never presents stock/generic photography as if it
- * were a real picture of the Creg Ny Baa — the alt text describes the final
+ * were a real picture of the Creg Ny Baa, the alt text describes the final
  * intended image for screen-reader users, and a small on-screen label makes
  * clear to sighted users that this is a placeholder.
  */

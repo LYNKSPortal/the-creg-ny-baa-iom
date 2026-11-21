@@ -11,7 +11,7 @@ import { glutenFreeInfo, diningNotes } from "@/data/menus";
 export const metadata: Metadata = {
   title: "Our Menus",
   description:
-    "Freshly cooked traditional pub food at the Creg Ny Baa — daily specials, Sunday roasts, family and senior menus, and an extensive gluten-free offering.",
+    "Freshly cooked traditional pub food at the Creg Ny Baa: daily specials, Sunday roasts, family and senior menus, and an extensive gluten-free offering.",
   alternates: { canonical: "/menus" },
 };
 
@@ -36,7 +36,7 @@ export default function MenusPage() {
             Our Menus
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/75">
-            Freshly cooked, traditional pub favourites served in generous Manx portions — with
+            Freshly cooked, traditional pub favourites served in generous Manx portions, with
             something for everyone, whatever brings you to the Creg.
           </p>
         </div>

@@ -7,7 +7,7 @@ import { ContactCTA } from "@/components/ui/ContactCTA";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Explore the Creg Ny Baa — TT racing, food and dining, the venue, and private events and hospitality, in pictures.",
+    "Explore the Creg Ny Baa in pictures: TT racing, food and dining, the venue, and private events and hospitality.",
   alternates: { canonical: "/gallery" },
 };
 
@@ -32,7 +32,7 @@ export default function GalleryPage() {
             Gallery
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/75">
-            Racing, food, the venue and our events — a real look at life at the Creg Ny Baa.
+            Racing, food, the venue and our events: a real look at life at the Creg Ny Baa.
           </p>
         </div>
       </section>

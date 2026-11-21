@@ -26,7 +26,7 @@ export const buffetMenus: BuffetMenu[] = [
     price: "From £18 per person",
     minGuests: "Minimum 30 guests",
     description:
-      "A premium cold buffet of roast meats carved to order, homemade sausage rolls and quiche — upgrade to include poached salmon and prawns.",
+      "A premium cold buffet of roast meats carved to order, homemade sausage rolls and quiche, upgrade to include poached salmon and prawns.",
     pdfHref: "/menus/30.10.2024-Fine-Meat-And-Sea-Food-Buffet-Menu.pdf",
   },
   {
@@ -44,7 +44,7 @@ export const buffetMenus: BuffetMenu[] = [
     price: "£9 per person",
     minGuests: "Up to 25 guests",
     description:
-      "A compact buffet of assorted sandwiches, pigs in blankets, spring rolls and homemade chips — ideal for smaller gatherings.",
+      "A compact buffet of assorted sandwiches, pigs in blankets, spring rolls and homemade chips, ideal for smaller gatherings.",
     pdfHref: "/menus/30.10.2024-Mini-Party-Buffet-Menu.pdf",
   },
   {
@@ -62,7 +62,7 @@ export const buffetMenus: BuffetMenu[] = [
     price: "£9 per person",
     minGuests: "Minimum 20 guests",
     description:
-      "A hearty choice of homemade beef hot pot or shortcrust pie, served with mushy peas — a Manx comfort-food favourite.",
+      "A hearty choice of homemade beef hot pot or shortcrust pie, served with mushy peas, a Manx comfort-food favourite.",
     pdfHref: "/menus/30.10.2024-Pie-Peas-Hot-Pot-Buffet-Menu.pdf",
   },
   {
@@ -71,7 +71,7 @@ export const buffetMenus: BuffetMenu[] = [
     price: "£10 per person",
     minGuests: "Minimum 10 guests",
     description:
-      "Homemade pulled pork in brioche baps with apple sauce, Cajun slaw and homemade chips — great for informal gatherings.",
+      "Homemade pulled pork in brioche baps with apple sauce, Cajun slaw and homemade chips, great for informal gatherings.",
     pdfHref: "/menus/30.10.2024-Pulled-Pork-Bap-Buffet-Menu.pdf",
   },
   {
@@ -80,20 +80,20 @@ export const buffetMenus: BuffetMenu[] = [
     price: "£7.50 per person (£7 for 31+)",
     minGuests: "Minimum 15 guests",
     description:
-      "Sausages (or veggie sausages) in baps with homemade chips — perfect for feeding a crowd at a club event or treasure hunt.",
+      "Sausages (or veggie sausages) in baps with homemade chips, perfect for feeding a crowd at a club event or treasure hunt.",
     pdfHref: "/menus/30.10.2024-Sausage-Saver-Menu.pdf",
   },
 ];
 
 export const buffetNotes = {
   dietary:
-    "Please advise us of any dietary requirements in advance — gluten-free and vegan options are available across our buffet menus on request.",
+    "Please advise us of any dietary requirements in advance; gluten-free and vegan options are available across our buffet menus on request.",
   roomHire: [
     "Function Room: £50 hire charge for daytime use until 6pm; £50 for evening events until 10pm, or £75 for evening events until midnight.",
     "Restaurant: suitable for gatherings of up to 50 guests, with wheelchair access (subject to availability).",
     "Upper Bar Area: ideal for smaller, informal gatherings of up to 30 guests (subject to availability).",
-    "Different rates apply for conferences, meetings or weddings — please ask our team for details.",
+    "Different rates apply for conferences, meetings or weddings; please ask our team for details.",
   ],
   suitableFor:
-    "Our buffets are popular for christenings, birthdays, anniversaries, club events and funeral wakes — we can help arrange everything following a funeral service too.",
+    "Our buffets are popular for christenings, birthdays, anniversaries, club events and funeral wakes; we can help arrange everything following a funeral service too.",
 };

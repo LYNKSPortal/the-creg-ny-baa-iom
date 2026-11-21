@@ -19,8 +19,8 @@ export const testimonials: Testimonial[] = [
   { quote: "The Creg also caters for GF, LF, veg and vegan.", source: "Happy Customer" },
   { quote: "The Pork Belly was fantastic!", source: "Happy Customer" },
   { quote: "Their gluten free menu is very extensive and everything delicious!", source: "Happy Customer" },
-  { quote: "Lovely place, lovely staff, lovely food — overall a great place to eat, definitely coming back!", source: "Happy Customer" },
+  { quote: "Lovely place, lovely staff, lovely food, overall a great place to eat, definitely coming back!", source: "Happy Customer" },
 ];
 
 export const testimonialsPlaceholderNote =
-  "Genuine customer reviews are coming soon — this section is ready to display verified feedback about our friendly service, home-cooked food, fish and chips, gluten-free options and Manx produce as soon as it's supplied.";
+  "Genuine customer reviews are coming soon; this section is ready to display verified feedback about our friendly service, home-cooked food, fish and chips, gluten-free options and Manx produce as soon as it's supplied.";

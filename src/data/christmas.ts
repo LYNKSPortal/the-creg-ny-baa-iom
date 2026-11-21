@@ -1,6 +1,6 @@
 // Festive content supplied by the venue as PDFs in /public/menus.
 // `activeFrom` / `activeUntil` control when the Christmas section and
-// announcement banner appear — update each year so outdated festive
+// announcement banner appear, update each year so outdated festive
 // information never shows as current.
 
 export const christmasSeason = {
@@ -29,7 +29,7 @@ export const christmasSeason = {
   },
   festiveBrunch: {
     description:
-      "Our Festive Brunch is back by popular demand — brioche baps, festive sausage rolls, pigs in blankets and warm mini mince pies, delivered to your workplace or collected from us.",
+      "Our Festive Brunch is back by popular demand: brioche baps, festive sausage rolls, pigs in blankets and warm mini mince pies, delivered to your workplace or collected from us.",
     price: "£15 per head",
     delivery: "Free delivery to Onchan and Douglas for 10 or more guests (£5 for fewer than 10, or collect for free). Must be delivered by 11:45am.",
   },

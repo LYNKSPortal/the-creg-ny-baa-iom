@@ -38,7 +38,7 @@ export default function FunctionsEventsPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-white/80">
             Our first-floor Veranda Suite offers a private bar, balconies over the TT course and
-            flexible space for every kind of occasion — from birthdays and christenings to
+            flexible space for every kind of occasion, from birthdays and christenings to
             corporate events and family celebrations.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function FunctionsEventsPage() {
             <SectionHeading
               eyebrow="Business & Meetings"
               title="Meetings & Conferences"
-              description="A refreshing change of scene for your next meeting — natural light, Mountain Road views and everything you need to present with confidence."
+              description="A refreshing change of scene for your next meeting: natural light, Mountain Road views and everything you need to present with confidence."
             />
           </Reveal>
           <Reveal delay={0.1}>
@@ -133,7 +133,7 @@ export default function FunctionsEventsPage() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-4 text-xs text-cng-grey-500">Prices shown are indicative and may be updated — please confirm current rates when enquiring.</p>
+          <p className="mt-4 text-xs text-cng-grey-500">Prices shown are indicative and may be updated; please confirm current rates when enquiring.</p>
         </div>
       </section>
 
@@ -145,7 +145,7 @@ export default function FunctionsEventsPage() {
               <SectionHeading
                 eyebrow="Catering Options"
                 title="Buffet & Catering Menus"
-                description="Tailored homemade buffets for every kind of event — from christenings and birthdays to club events and funeral wakes. Download a menu below or get in touch to discuss your requirements."
+                description="Tailored homemade buffets for every kind of event, from christenings and birthdays to club events and funeral wakes. Download a menu below or get in touch to discuss your requirements."
               />
             </Reveal>
             <Reveal delay={0.1}>

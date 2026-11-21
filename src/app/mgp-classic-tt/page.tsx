@@ -11,7 +11,7 @@ import { legalNotices } from "@/data/site";
 export const metadata: Metadata = {
   title: "MGP & Classic TT Hospitality",
   description:
-    "Manx Grand Prix and Classic TT hospitality and race viewing at the Creg Ny Baa — balcony viewing over the famous corner in a relaxed, historic racing atmosphere.",
+    "Manx Grand Prix and Classic TT hospitality and race viewing at the Creg Ny Baa, balcony viewing over the famous corner in a relaxed, historic racing atmosphere.",
   alternates: { canonical: "/mgp-classic-tt" },
 };
 
@@ -20,7 +20,7 @@ const highlights = [
     icon: Trophy,
     title: "A Celebration of Racing Heritage",
     description:
-      "The Manx Grand Prix and Classic TT bring historic and privateer racing back to the Mountain Road — with the Creg Ny Baa right at the heart of the action.",
+      "The Manx Grand Prix and Classic TT bring historic and privateer racing back to the Mountain Road, with the Creg Ny Baa right at the heart of the action.",
   },
   {
     icon: Binoculars,
@@ -89,7 +89,7 @@ export default function MgpClassicTtPage() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <SectionHeading
-              eyebrow="Reference Only — Not Current"
+              eyebrow="Reference Only · Not Current"
               title="August 2026 Hospitality"
               description="Details below are retained from our August 2026 event as a reference and do not represent a current offering. Updated hospitality details will be published when future dates are announced."
             />

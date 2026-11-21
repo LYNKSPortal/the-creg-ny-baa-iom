@@ -12,7 +12,7 @@ import { legalNotices } from "@/data/site";
 export const metadata: Metadata = {
   title: "TT 2027 Hospitality & Race Viewing",
   description:
-    "Experience the Isle of Man TT 2027 from the legendary Creg Ny Baa corner — exclusive balcony viewing, VIP hospitality, grandstand information and race-day details. Details for 2027 coming soon.",
+    "Experience the Isle of Man TT 2027 from the legendary Creg Ny Baa corner, exclusive balcony viewing, VIP hospitality, grandstand information and race-day details. Details for 2027 coming soon.",
   alternates: { canonical: "/tt-2027" },
 };
 
@@ -27,13 +27,13 @@ const raceDayInfo = [
     icon: Users,
     title: "Free Spectator Areas",
     description:
-      "Alongside our hospitality spaces, there is free public viewing around the Creg Ny Baa for spectators arriving on race day — arrive early for the best spots.",
+      "Alongside our hospitality spaces, there is free public viewing around the Creg Ny Baa for spectators arriving on race day; arrive early for the best spots.",
   },
   {
     icon: Flag,
     title: "Practice Week & Race Week",
     description:
-      "From practice sessions to the main race week, the Creg comes alive with fans from around the world — our kitchen and bar run throughout.",
+      "From practice sessions to the main race week, the Creg comes alive with fans from around the world; our kitchen and bar run throughout.",
   },
   {
     icon: Car,
@@ -45,7 +45,7 @@ const raceDayInfo = [
     icon: Clock,
     title: "Ticket Release",
     description:
-      "Hospitality and grandstand ticket details for TT 2027 will be released ahead of the event — check back here or get in touch to register your interest.",
+      "Hospitality and grandstand ticket details for TT 2027 will be released ahead of the event; check back here or get in touch to register your interest.",
   },
   {
     icon: Wallet,
@@ -76,7 +76,7 @@ export default function TT2027Page() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-white/80">
             The world&apos;s greatest road race returns to the Mountain Road. Experience it from the
-            legendary Creg Ny Baa corner — full hospitality details for 2027 are coming soon.
+            legendary Creg Ny Baa corner. Full hospitality details for 2027 are coming soon.
           </p>
           <div className="mx-auto mt-8 inline-flex items-center gap-2 rounded-sm border border-cng-gold/40 bg-cng-gold/10 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-cng-gold">
             TT 2027 hospitality details coming soon
@@ -110,9 +110,9 @@ export default function TT2027Page() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <SectionHeading
-              eyebrow="Reference Only — Not Current"
+              eyebrow="Reference Only · Not Current"
               title="2026 Hospitality Packages"
-              description="These packages reflect our 2026 TT hospitality offering and are retained here as historical reference only. They do not represent current pricing or availability for TT 2027 — updated details will replace this content once confirmed."
+              description="These packages reflect our 2026 TT hospitality offering and are retained here as historical reference only. They do not represent current pricing or availability for TT 2027; updated details will replace this content once confirmed."
             />
           </Reveal>
           <div className="mt-12 grid gap-6 lg:grid-cols-2">

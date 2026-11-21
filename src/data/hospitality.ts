@@ -8,7 +8,7 @@ export type HospitalityPackage = {
   archived?: boolean;
 };
 
-// TT Races hospitality — 2027 packages are not yet announced.
+// TT Races hospitality, 2027 packages are not yet announced.
 // 2026 details are retained below as historical reference only.
 export const tt2026Packages: HospitalityPackage[] = [
   {
@@ -85,11 +85,11 @@ export const meetingPackages = [
 export const veranda = {
   name: "The Veranda Suite",
   description:
-    "Our first-floor function suite with its own private bar and balconies looking directly out over the TT course and the Manx countryside beyond — one of the most memorable settings for a private event on the Island.",
+    "Our first-floor function suite with its own private bar and balconies looking directly out over the TT course and the Manx countryside beyond; one of the most memorable settings for a private event on the Island.",
   standingCapacity: 100,
   seatedCapacity: 65,
   accessibilityNote:
-    "The Veranda Suite is on the first floor and is accessed by stairs only — there is no lift, so unfortunately this space is not wheelchair accessible. Please contact us to discuss accessible alternatives for your event.",
+    "The Veranda Suite is on the first floor and is accessed by stairs only; there is no lift, so unfortunately this space is not wheelchair accessible. Please contact us to discuss accessible alternatives for your event.",
   features: [
     "Private bar",
     "Balconies overlooking the TT course",
@@ -124,7 +124,7 @@ export const funeralWakes = {
       "A fully accessible option on the ground floor for medium-sized gatherings, with step-free access throughout.",
   },
   largerSpaces:
-    "For larger gatherings, our function spaces (including the Veranda Suite) can accommodate bigger numbers — please get in touch to discuss your requirements.",
+    "For larger gatherings, our function spaces (including the Veranda Suite) can accommodate bigger numbers; please get in touch to discuss your requirements.",
   extras: [
     "Homemade buffet options tailored to your wishes",
     "Space for photo displays and memory tables",

@@ -21,5 +21,5 @@ export const eveningHours: ServicePeriod[] = [
 
 export const hoursNotes = {
   closingTimesNote:
-    "Some closing times are provisional and subject to confirmation — please call the pub directly to check before travelling, especially outside peak season.",
+    "Some closing times are provisional and subject to confirmation; please call the pub directly to check before travelling, especially outside peak season.",
 };

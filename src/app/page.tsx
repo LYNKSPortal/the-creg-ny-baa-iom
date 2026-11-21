@@ -43,7 +43,7 @@ const features = [
   {
     title: "The Creg Experience",
     description:
-      "A warm welcome, breathtaking Mountain Road views and genuine Manx hospitality — discover what makes the Creg Ny Baa unlike anywhere else.",
+      "A warm welcome, breathtaking Mountain Road views and genuine Manx hospitality, discover what makes the Creg Ny Baa unlike anywhere else.",
     href: "/gallery",
     image: "/images/venue/exterior-mountain-road.jpg",
     imageAlt: "The Creg Ny Baa exterior on the Mountain Road, Isle of Man",
@@ -90,7 +90,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-balance text-lg leading-relaxed text-cng-grey-700">
               Standing proudly on the A18 Mountain Road, the Creg Ny Baa is one of the most
-              recognisable corners on the entire Isle of Man TT course — a place where
+              recognisable corners on the entire Isle of Man TT course, a place where
               generations of racing fans have gathered to watch history unfold. But it&apos;s far more
               than a grandstand: it&apos;s a genuine Manx pub and restaurant, open to everyone, with
               breathtaking countryside views, a warm traditional atmosphere and freshly cooked
@@ -142,7 +142,7 @@ export default function HomePage() {
             <p className="mt-6 text-balance text-base leading-relaxed text-white/75 sm:text-lg">
               For over a century, the Creg Ny Baa has watched the TT course&apos;s fastest, most
               skilled riders sweep through its famous bend. Today, our balcony and hospitality
-              spaces offer one of the best vantage points on the entire 37&frac34; mile course —
+              spaces offer one of the best vantage points on the entire 37&frac34; mile course,
               combined with the comfort, food and hospitality of a proper Manx pub.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">

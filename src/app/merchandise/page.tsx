@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Merchandise",
-  description: "Creg Ny Baa branded merchandise — enquire by email to purchase or check availability.",
+  description: "Creg Ny Baa branded merchandise. Enquire by email to purchase or check availability.",
   alternates: { canonical: "/merchandise" },
 };
 
@@ -76,7 +76,7 @@ export default function MerchandisePage() {
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-cng-grey-700">{product.description}</p>
                     <p className="mt-4 text-lg font-bold text-cng-red">{product.price}</p>
                     <PrimaryButton
-                      href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(`Merchandise Enquiry — ${product.name}`)}`}
+                      href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(`Merchandise Enquiry, ${product.name}`)}`}
                       variant="ghost"
                       className="mt-4 w-full justify-center"
                     >
