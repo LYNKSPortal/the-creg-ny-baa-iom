@@ -4,8 +4,10 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AnnouncementBanner } from "@/components/ui/AnnouncementBanner";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/data/site";
 import { christmasSeason } from "@/data/christmas";
+import { localBusinessJsonLd } from "@/lib/structuredData";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,6 +62,27 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | Isle of Man TT Pub, Restaurant & Events Venue`,
     description: siteConfig.description,
   },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon/favicon.ico" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -69,6 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${barlowCondensed.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cng-cream text-cng-black">
+        <JsonLd data={localBusinessJsonLd()} />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

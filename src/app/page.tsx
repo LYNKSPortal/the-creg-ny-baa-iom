@@ -7,12 +7,17 @@ import { FeatureCard } from "@/components/ui/FeatureCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
-import { siteConfig } from "@/data/site";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { homeFaqs } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: siteConfig.description,
+  title: "Isle of Man TT Pub, Restaurant & Race-Day Hospitality | The Famous Creg Ny Baa",
+  description:
+    "The Famous Creg Ny Baa: a legendary Isle of Man TT corner, traditional Manx pub and restaurant on the Mountain Road, Onchan. Home-cooked food, gluten-free menu, private functions and race-day hospitality.",
   alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+  },
 };
 
 const features = [
@@ -53,31 +58,6 @@ const features = [
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Restaurant",
-            name: siteConfig.name,
-            image: `${siteConfig.url}/og-image.jpg`,
-            "@id": siteConfig.url,
-            url: siteConfig.url,
-            telephone: siteConfig.phone,
-            email: siteConfig.email,
-            servesCuisine: "British",
-            priceRange: "££",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: `${siteConfig.address.line1}, ${siteConfig.address.line2}`,
-              addressLocality: siteConfig.address.town,
-              postalCode: siteConfig.address.postcode,
-              addressCountry: "IM",
-            },
-          }),
-        }}
-      />
-
       <Hero />
 
       {/* Introduction */}
@@ -182,6 +162,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection items={homeFaqs} title="Frequently Asked Questions" eyebrow="Good to Know" />
 
       <ContactCTA />
     </>

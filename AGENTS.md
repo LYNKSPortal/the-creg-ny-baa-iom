@@ -69,16 +69,44 @@ the owner's existing site (cregnybaa.com) and saved under `public/images/`:
 - `src/data/testimonials.ts`, `siteConfig.bookingUrl` (real Dazzler link) and
   `siteConfig.social.facebook` were also populated from the live site's real content.
 
+### SEO, AEO & GEO
+The canonical domain is `https://cregnybaa.com` (no `www` — `www.cregnybaa.com` 301s to
+it live, see `siteConfig.url` in `src/data/site.ts`). Structured data, FAQs and crawler
+config all live in a few central places:
+- `src/lib/structuredData.ts` — builders for `Restaurant`/`LocalBusiness` (sitewide,
+  injected once in `src/app/layout.tsx` with real opening hours derived from
+  `src/data/hours.ts` and geo-coordinates from the venue's own Google Maps link),
+  `FAQPage`, `BreadcrumbList`, `Menu` and an `ItemList` of `Product`s (no fake prices —
+  availability only, since merch prices are still TBC).
+- `src/components/seo/JsonLd.tsx`, `FaqSection.tsx` + `FaqAccordion.tsx`,
+  `Breadcrumbs.tsx` — reusable components that pair visible, accessible markup with the
+  matching schema so there's one source of truth per page.
+- `src/data/faqs.ts` — all FAQ copy, grounded only in facts already established
+  elsewhere in `src/data/*` (never invented). Rendered + schema'd on Home, Our Menus,
+  Functions & Events, TT 2027, MGP/Classic TT and Merchandise.
+- `src/app/sitemap.ts` — per-page `priority`/`changeFrequency` (not just one blanket
+  value). `src/app/robots.ts` — explicitly allows mainstream AI/answer-engine crawlers
+  (GPTBot, Google-Extended, PerplexityBot, ClaudeBot, etc.) for GEO visibility, in
+  addition to the default `*` allow-all.
+- `public/llms.txt` — a plain-language summary of the venue and its pages for LLMs/AI
+  agents, per the emerging llms.txt convention. Keep this in sync with `src/data/site.ts`
+  and `src/data/hours.ts` if those change.
+- Note: the homepage's `<title>` is the one page where Next's root-layout
+  `title.template` does **not** apply (it only applies to child segments, not the page
+  co-located with the layout that defines it) — so `src/app/page.tsx` spells out the
+  full `"... | The Famous Creg Ny Baa"` title manually rather than relying on the
+  template, unlike every other page.
+
 ### Known gaps to fill in before launch
 - **Menu item photography**: category photos in `MenuTabs`/gallery are representative
   dishes, not a dedicated photo per PDF menu — fine for now, swap in closer matches if
   better photography becomes available.
 - **Merchandise**: only 4 products have real photos (2 hoodies, bobble hat, beanie) in
   `src/data/merchandise.ts` — prices are still `"Price TBC"`. Add more products/prices
-  as they're confirmed.
+  as they're confirmed (and extend `productsJsonLd` to include real `Offer` prices once
+  they exist).
 - **Social links**: `siteConfig.social.instagram` is still `null` — add once confirmed.
 - **Opening hours**: Sunday evening hours are marked unconfirmed in `src/data/hours.ts`
-  (the live site doesn't list Sunday evening hours either).
-- `og-image.jpg` referenced in layout metadata does not yet exist in `public/` — add one
-  (e.g. a cropped venue exterior photo) before relying on social share previews.
+  (the live site doesn't list Sunday evening hours either) and are deliberately excluded
+  from the `Restaurant` schema's `openingHoursSpecification` until confirmed.
 <!-- END:project-notes -->

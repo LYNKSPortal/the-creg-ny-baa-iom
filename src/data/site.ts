@@ -4,7 +4,8 @@
 export const siteConfig = {
   name: "The Famous Creg Ny Baa",
   shortName: "Creg Ny Baa",
-  url: "https://www.cregnybaa.com",
+  // Canonical domain confirmed live: www.cregnybaa.com 301-redirects to cregnybaa.com.
+  url: "https://cregnybaa.com",
   description:
     "The Famous Creg Ny Baa is an iconic Isle of Man TT grandstand corner, traditional Manx pub and restaurant, and premier events venue on the Mountain Road, Onchan. Home-cooked food, warm hospitality and legendary race-day views.",
   email: "creg-ny-baa@hotmail.com",
@@ -20,6 +21,11 @@ export const siteConfig = {
   },
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=Creg+Ny+Baa+Hotel+Mountain+Road+Onchan+IM4+5BP+Isle+of+Man",
+  // Real coordinates, taken from the venue's own embedded Google Maps link on cregnybaa.com.
+  geo: {
+    latitude: 54.207308,
+    longitude: -4.466293,
+  },
   // Real Dazzler booking link, confirmed from the live cregnybaa.com site.
   bookingUrl: "https://dazzler.app/isle-of-man/onchan/the-creg-ny-baa-d290r/book-a-table" as string | null,
   social: {

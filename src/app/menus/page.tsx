@@ -6,18 +6,25 @@ import { Reveal } from "@/components/ui/Reveal";
 import { MenuTabs } from "@/components/menus/MenuTabs";
 import { ChristmasSection } from "@/components/menus/ChristmasSection";
 import { ContactCTA } from "@/components/ui/ContactCTA";
-import { glutenFreeInfo, diningNotes } from "@/data/menus";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { glutenFreeInfo, diningNotes, menuCategories } from "@/data/menus";
+import { menusFaqs } from "@/data/faqs";
+import { menuJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Our Menus",
   description:
-    "Freshly cooked traditional pub food at the Creg Ny Baa: daily specials, Sunday roasts, family and senior menus, and an extensive gluten-free offering.",
+    "Freshly cooked traditional pub food at the Creg Ny Baa in Onchan: daily specials, Sunday roasts, family and senior menus, and an extensive gluten-free offering.",
   alternates: { canonical: "/menus" },
+  openGraph: { url: "/menus" },
 };
 
 export default function MenusPage() {
   return (
     <>
+      <JsonLd data={menuJsonLd(menuCategories)} />
       <section className="relative overflow-hidden bg-cng-black py-20 text-center sm:py-28">
         <div className="absolute inset-0">
           <Image
@@ -31,6 +38,9 @@ export default function MenusPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs light items={[{ name: "Our Menus", href: "/menus" }]} />
+          </div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">Food & Drink</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             Our Menus
@@ -93,6 +103,8 @@ export default function MenusPage() {
       </section>
 
       <ChristmasSection />
+
+      <FaqSection items={menusFaqs} />
 
       <ContactCTA title="Ready to Eat With Us?" description="Book a table to enjoy freshly cooked food with some of the best views on the Isle of Man." />
     </>

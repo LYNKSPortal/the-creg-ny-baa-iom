@@ -5,15 +5,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { veranda, funeralWakes, meetingPackages } from "@/data/hospitality";
 import { buffetMenus, buffetNotes } from "@/data/buffets";
+import { functionsEventsFaqs } from "@/data/faqs";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Functions, Events & Funeral Wakes",
   description:
-    "Private functions, celebrations, corporate meetings and funeral wakes at the Creg Ny Baa's first-floor Veranda Suite, overlooking the Isle of Man TT course.",
+    "Private functions, celebrations, corporate meetings and funeral wakes at the Creg Ny Baa's first-floor Veranda Suite (up to 100 guests), overlooking the Isle of Man TT course in Onchan.",
   alternates: { canonical: "/functions-events" },
+  openGraph: { url: "/functions-events" },
 };
 
 export default function FunctionsEventsPage() {
@@ -32,6 +36,9 @@ export default function FunctionsEventsPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/70 to-cng-black/30" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs light items={[{ name: "Functions, Events & Funeral Wakes", href: "/functions-events" }]} />
+          </div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">Functions, Events &amp; Wakes</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             Celebrate, Gather &amp; Remember at the Creg
@@ -248,6 +255,8 @@ export default function FunctionsEventsPage() {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection items={functionsEventsFaqs} />
 
       <ContactCTA
         title="Start Planning Your Event"

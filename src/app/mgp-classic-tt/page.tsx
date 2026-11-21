@@ -5,14 +5,18 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { mgpClassicTt2026Packages } from "@/data/hospitality";
+import { mgpFaqs } from "@/data/faqs";
 import { legalNotices } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "MGP & Classic TT Hospitality",
   description:
-    "Manx Grand Prix and Classic TT hospitality and race viewing at the Creg Ny Baa, balcony viewing over the famous corner in a relaxed, historic racing atmosphere.",
+    "Manx Grand Prix and Classic TT hospitality and race viewing at the Creg Ny Baa on the Mountain Road: balcony viewing over the famous corner in a relaxed, historic racing atmosphere every August.",
   alternates: { canonical: "/mgp-classic-tt" },
+  openGraph: { url: "/mgp-classic-tt" },
 };
 
 const highlights = [
@@ -52,6 +56,9 @@ export default function MgpClassicTtPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/70 to-cng-black/30" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs light items={[{ name: "MGP / Classic TT", href: "/mgp-classic-tt" }]} />
+          </div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">Historic Racing</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             MGP &amp; Classic TT
@@ -104,6 +111,8 @@ export default function MgpClassicTtPage() {
           <p className="mt-6 text-xs text-cng-grey-500">{legalNotices.cashOnRaceDays}</p>
         </div>
       </section>
+
+      <FaqSection items={mgpFaqs} />
 
       <ContactCTA
         title="Register Your Interest"

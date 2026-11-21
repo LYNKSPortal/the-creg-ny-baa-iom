@@ -4,19 +4,26 @@ import { Mail } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { products, merchandiseNote } from "@/data/merchandise";
+import { merchandiseFaqs } from "@/data/faqs";
 import { siteConfig } from "@/data/site";
+import { productsJsonLd } from "@/lib/structuredData";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Merchandise",
-  description: "Creg Ny Baa branded merchandise. Enquire by email to purchase or check availability.",
+  description: "Creg Ny Baa branded merchandise, hoodies, bobble hats and beanies. Enquire by email to purchase or check availability.",
   alternates: { canonical: "/merchandise" },
+  openGraph: { url: "/merchandise" },
 };
 
 export default function MerchandisePage() {
   return (
     <>
+      <JsonLd data={productsJsonLd(products)} />
       <section className="relative overflow-hidden bg-cng-black py-24 sm:py-32">
         <div className="absolute inset-0">
           <Image
@@ -30,6 +37,9 @@ export default function MerchandisePage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs light items={[{ name: "Merchandise", href: "/merchandise" }]} />
+          </div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">Shop</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             Merchandise
@@ -90,6 +100,8 @@ export default function MerchandisePage() {
           </div>
         </div>
       </section>
+
+      <FaqSection items={merchandiseFaqs} />
 
       <ContactCTA
         title="Looking for Something Specific?"

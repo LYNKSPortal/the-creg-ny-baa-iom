@@ -6,14 +6,18 @@ import { Reveal } from "@/components/ui/Reveal";
 import { EventCard } from "@/components/ui/EventCard";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
+import { FaqSection } from "@/components/seo/FaqSection";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { tt2026Packages } from "@/data/hospitality";
+import { tt2027Faqs } from "@/data/faqs";
 import { legalNotices } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "TT 2027 Hospitality & Race Viewing",
   description:
-    "Experience the Isle of Man TT 2027 from the legendary Creg Ny Baa corner, exclusive balcony viewing, VIP hospitality, grandstand information and race-day details. Details for 2027 coming soon.",
+    "Experience the Isle of Man TT 2027 from the legendary Creg Ny Baa corner on the Mountain Road: exclusive balcony viewing, VIP hospitality, grandstand information and race-day details. Details for 2027 coming soon.",
   alternates: { canonical: "/tt-2027" },
+  openGraph: { url: "/tt-2027" },
 };
 
 const raceDayInfo = [
@@ -70,6 +74,9 @@ export default function TT2027Page() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
         <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs light items={[{ name: "TT 2027", href: "/tt-2027" }]} />
+          </div>
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cng-gold">Isle of Man TT</p>
           <h1 className="mt-4 text-balance font-display text-6xl font-black uppercase leading-[0.95] tracking-tight text-white sm:text-8xl">
             TT <span className="text-cng-red">2027</span>
@@ -124,6 +131,8 @@ export default function TT2027Page() {
           </div>
         </div>
       </section>
+
+      <FaqSection items={tt2027Faqs} />
 
       <ContactCTA
         title="Register Your Interest for TT 2027"
