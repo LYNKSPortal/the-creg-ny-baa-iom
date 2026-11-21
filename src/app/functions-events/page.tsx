@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Check, AlertTriangle, Image as ImageIcon } from "lucide-react";
+import { Check, AlertTriangle, Image as ImageIcon, Download } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { veranda, funeralWakes, meetingPackages } from "@/data/hospitality";
+import { buffetMenus, buffetNotes } from "@/data/buffets";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -120,6 +121,55 @@ export default function FunctionsEventsPage() {
             ))}
           </div>
           <p className="mt-4 text-xs text-cng-grey-500">Prices shown are indicative and may be updated — please confirm current rates when enquiring.</p>
+        </div>
+      </section>
+
+      {/* Buffet & catering menus */}
+      <section className="border-t border-cng-black/10 bg-cng-cream">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Catering Options"
+              title="Buffet & Catering Menus"
+              description="Tailored homemade buffets for every kind of event — from christenings and birthdays to club events and funeral wakes. Download a menu below or get in touch to discuss your requirements."
+            />
+          </Reveal>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {buffetMenus.map((menu, i) => (
+              <Reveal key={menu.id} delay={i * 0.05}>
+                <div className="flex h-full flex-col border border-cng-black/10 bg-cng-white p-6">
+                  <h3 className="font-display text-xl font-bold uppercase tracking-tight text-cng-black">{menu.title}</h3>
+                  <p className="mt-1 text-sm font-semibold text-cng-red">{menu.price}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-cng-grey-500">{menu.minGuests}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-cng-grey-700">{menu.description}</p>
+                  <a
+                    href={menu.pdfHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-cng-black hover:text-cng-red"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    Download Menu
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.1} className="mt-10">
+            <p className="text-sm text-cng-grey-700">{buffetNotes.dietary}</p>
+            <p className="mt-2 text-sm text-cng-grey-700">{buffetNotes.suitableFor}</p>
+            <div className="mt-6 border border-cng-black/10 bg-cng-grey-100 p-6">
+              <h3 className="font-display text-lg font-bold uppercase tracking-tight text-cng-black">Room Hire</h3>
+              <ul className="mt-3 space-y-2">
+                {buffetNotes.roomHire.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-cng-grey-700">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cng-red" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 

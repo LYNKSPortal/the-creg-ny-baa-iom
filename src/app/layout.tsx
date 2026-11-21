@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AnnouncementBanner } from "@/components/ui/AnnouncementBanner";
 import { siteConfig } from "@/data/site";
+import { christmasSeason } from "@/data/christmas";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,9 +75,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        {/* Example seasonal announcement — update dates/copy each year, or add further banners as needed. */}
-        <AnnouncementBanner startDate="2026-12-01" endDate="2026-12-26">
-          Our Christmas menu is now available — call {siteConfig.phone} or enquire by email to book your festive table.
+        {/* Seasonal Christmas announcement — dates/copy live in src/data/christmas.ts, update each year. */}
+        <AnnouncementBanner startDate={christmasSeason.activeFrom} endDate={christmasSeason.activeUntil} href="/menus#christmas">
+          Our Christmas menus are now available, {christmasSeason.availability.toLowerCase()} — view menus &amp; book your festive table.
         </AnnouncementBanner>
         <Header />
         <main id="main-content" className="flex-1">

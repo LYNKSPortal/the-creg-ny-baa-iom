@@ -3,6 +3,7 @@ import { ShieldCheck, Dog, Users } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { MenuTabs } from "@/components/menus/MenuTabs";
+import { ChristmasSection } from "@/components/menus/ChristmasSection";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { glutenFreeInfo, diningNotes } from "@/data/menus";
 
@@ -78,6 +79,8 @@ export default function MenusPage() {
           </Reveal>
         </div>
       </section>
+
+      <ChristmasSection />
 
       <ContactCTA title="Ready to Eat With Us?" description="Book a table to enjoy freshly cooked food with some of the best views on the Isle of Man." />
     </>

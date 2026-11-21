@@ -35,6 +35,24 @@ visitors with `prefers-reduced-motion` enabled. To swap the clip, update the
 - `src/components/layout` — Header, MobileNavigation, Footer.
 - `src/app/*` — one route per top-level nav item, plus `sitemap.ts` / `robots.ts`.
 
+### Menus, buffets & Christmas (real content supplied)
+Real venue PDFs live in `public/menus/` and are wired up as follows:
+- `src/data/menus.ts` — Lunch & Evening / Children's / Gluten-Free menus all point at
+  `16.05.2025-Lunch-Evening-Gluten-Free.pdf`; Senior Citizens' menu points at
+  `16.05.2025-Sunday-Citizens-Menu.pdf`. Rendered via `MenuTabs` on `/menus`.
+- `src/data/buffets.ts` — the 8 buffet/catering PDFs (afternoon tea, fine meats &
+  seafood, hot buffet, mini party, party, pie & peas/hot pot, pulled pork bap, sausage
+  saver), plus real room-hire pricing. Rendered on `/functions-events`.
+- `src/data/christmas.ts` — festive opening hours, menus/prices, function room and
+  Festive Brunch details, pulled from `Creg-Christmas-Menus-2026-.pdf` and
+  `CHristmas-Pre-Order-26.pdf`. Rendered by `ChristmasSection` on `/menus` (anchor
+  `#christmas`) and summarised in the sitewide `AnnouncementBanner`, both gated by
+  `activeFrom`/`activeUntil` via `isWithinDateWindow()` in `src/lib/utils.ts` — **update
+  these dates (and the PDF filenames/content) every year** so last year's Christmas
+  information never shows as current.
+- No Sunday Roast or Daily Specials PDF was supplied — those categories stay
+  description-only (`pdfHref: null`) until menus are provided.
+
 ### Known gaps to fill in before launch
 - **Photography**: no real venue/TT photography has been supplied for still images
   (the hero now uses real Mux drone video — see above). `PlaceholderImage` renders a
@@ -44,8 +62,6 @@ visitors with `prefers-reduced-motion` enabled. To swap the clip, update the
   button falls back to a phone link until the real Dazzler booking URL is confirmed.
 - **Testimonials**: `src/data/testimonials.ts` is intentionally empty — no genuine,
   attributed customer quotes were supplied. Add real quotes (with source) there.
-- **Menus**: `src/data/menus.ts` has category descriptions but no real dishes/prices/PDFs
-  (none were supplied). Add `pdfHref` per category once menu PDFs exist.
 - **Merchandise**: `src/data/merchandise.ts` product names/prices/images are placeholders.
 - **Social links**: `siteConfig.social` is empty until Facebook/Instagram URLs are verified.
 - **Opening hours**: Sunday evening hours are marked unconfirmed in `src/data/hours.ts`.

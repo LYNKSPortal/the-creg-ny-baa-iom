@@ -1,6 +1,5 @@
-// No specific dishes, prices or PDF menus have been supplied yet.
-// This file defines the structure only — add real menu content or PDF links
-// as they become available, and the Our Menus page will pick them up automatically.
+// Real menu PDFs supplied by the venue live in /public/menus — update the
+// pdfHref values below if filenames change or new menus are issued.
 
 export type MenuCategory = {
   id: string;
@@ -9,19 +8,22 @@ export type MenuCategory = {
   pdfHref: string | null; // set to the real menu PDF path/URL once supplied
 };
 
+const LUNCH_EVENING_PDF = "/menus/16.05.2025-Lunch-Evening-Gluten-Free.pdf";
+const SENIOR_CITIZENS_PDF = "/menus/16.05.2025-Sunday-Citizens-Menu.pdf";
+
 export const menuCategories: MenuCategory[] = [
   {
     id: "main-menu",
-    title: "Main Menu",
+    title: "Lunch & Evening Menu",
     description:
-      "Freshly cooked traditional pub favourites, made in-house using quality ingredients, including Manx produce where possible.",
-    pdfHref: null,
+      "Freshly cooked traditional pub favourites, made in-house — from the Creg's famous battered cod to homemade pies, burgers, salads and light bites.",
+    pdfHref: LUNCH_EVENING_PDF,
   },
   {
     id: "specials",
     title: "Daily Specials",
     description:
-      "Our specials board changes regularly, making the most of seasonal and local ingredients alongside kitchen favourites.",
+      "Our specials board changes regularly, making the most of seasonal ingredients alongside kitchen favourites — ask your server what's on today.",
     pdfHref: null,
   },
   {
@@ -35,31 +37,32 @@ export const menuCategories: MenuCategory[] = [
     id: "childrens",
     title: "Children's Menu",
     description:
-      "Family-friendly dishes sized and priced for younger guests, served throughout our regular opening hours.",
-    pdfHref: null,
+      "Family-friendly dishes sized and priced for younger guests, including fish, chicken nuggets and homemade beef lasagne — see the Lunch & Evening menu for details.",
+    pdfHref: LUNCH_EVENING_PDF,
   },
   {
     id: "senior-citizens",
     title: "Senior Citizens' Menu",
     description:
-      "A dedicated menu offering great value for our senior guests — ask a member of the team for details.",
-    pdfHref: null,
+      "Smaller, great-value portions of our favourite dishes for senior guests (and older children) — just let your server know you'd like the Senior Citizens sizing.",
+    pdfHref: SENIOR_CITIZENS_PDF,
   },
   {
     id: "gluten-free",
     title: "Gluten-Free Menu",
     description:
-      "An extensive gluten-free offering, prepared with dedicated fryers and utensils and flagged clearly when served.",
-    pdfHref: null,
+      "An extensive gluten-free offering across starters, mains, light bites and sides, prepared with dedicated fryers and utensils and flagged clearly when served.",
+    pdfHref: LUNCH_EVENING_PDF,
   },
 ];
 
 export const glutenFreeInfo = {
   heading: "Our Gluten-Free Offering",
   body: [
-    "We're proud to offer an extensive gluten-free menu, with many of our pub favourites available gluten-free on request.",
-    "Gluten-free food is prepared using separate fryers and utensils, kept apart from standard menu preparation to reduce the risk of cross-contact.",
-    "Every gluten-free meal is clearly identified with a flag when it's brought to your table, so you can be confident you've been served the right dish.",
+    "We're very proud of our gluten-free menu, specials and desserts — with many of our pub favourites available gluten-free, including our famous battered cod in its own gluten-free batter.",
+    "We ensure there is no cross-contamination: separate fryers and utensils are used for gluten-free food, kept apart from standard menu preparation.",
+    "Look out for (GF) on our specials board — this means that dish can be prepared gluten-free, but you must tell your server you'd like the gluten-free option when ordering.",
+    "Every gluten-free meal is brought to your table with a flag — if yours doesn't arrive with one, please question it with your server.",
   ],
   disclaimer:
     "While we take great care with our gluten-free preparation, our kitchen handles gluten-containing ingredients and we cannot guarantee a completely gluten-free environment. Please speak to our team about your requirements before ordering if you have a severe allergy or intolerance.",
