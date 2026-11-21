@@ -1,9 +1,9 @@
 import { CalendarCheck } from "lucide-react";
-import { PrimaryButton } from "@/components/ui/PrimaryButton";
+import { PrimaryButton, type ButtonVariant } from "@/components/ui/PrimaryButton";
 import { siteConfig } from "@/data/site";
 
 type BookTableButtonProps = {
-  variant?: "solid" | "outline" | "ghost" | "gold";
+  variant?: ButtonVariant;
   className?: string;
 };
 

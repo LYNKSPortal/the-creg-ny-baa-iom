@@ -2,7 +2,8 @@ import Link from "next/link";
 import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "solid" | "outline" | "ghost" | "gold";
+export type ButtonVariant = "solid" | "outline" | "ghost" | "gold" | "white";
+type Variant = ButtonVariant;
 
 type PrimaryButtonProps = {
   href?: string;
@@ -19,6 +20,7 @@ const variantClasses: Record<Variant, string> = {
   ghost:
     "bg-transparent text-cng-black border border-cng-black/20 hover:border-cng-black hover:bg-cng-black hover:text-white",
   gold: "bg-cng-gold text-cng-black border border-cng-gold hover:bg-cng-gold/85",
+  white: "bg-white text-cng-black border border-white hover:bg-cng-cream",
 };
 
 export function PrimaryButton({

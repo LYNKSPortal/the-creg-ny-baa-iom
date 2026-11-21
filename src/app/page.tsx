@@ -158,13 +158,27 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-cng-grey-100">
-        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <section className="bg-cng-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
           <Reveal>
-            <SectionHeading eyebrow="What Visitors Say" title="Kind Words From Our Guests" align="center" className="mx-auto" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/images/venue/bar-drinks.jpg"
+                alt="Drinks ready to serve at the Creg Ny Baa bar"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
-          <Reveal delay={0.1} className="mt-12">
-            <TestimonialCarousel />
+          <Reveal delay={0.1}>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-red">What Visitors Say</p>
+            <h2 className="mt-4 text-balance font-display text-4xl font-bold uppercase leading-tight tracking-tight text-cng-black sm:text-5xl">
+              Kind Words From Our Guests
+            </h2>
+            <div className="mt-8">
+              <TestimonialCarousel align="left" />
+            </div>
           </Reveal>
         </div>
       </section>
