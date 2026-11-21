@@ -11,7 +11,15 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Project Notes — The Famous Creg Ny Baa website
 
 Stack: Next.js 16 (App Router, Turbopack, RSC-by-default), TypeScript, Tailwind CSS v4,
-Framer Motion, lucide-react.
+Framer Motion, lucide-react, @mux/mux-player-react (hero background video).
+
+### Hero video (Mux)
+The homepage hero plays real drone race footage ("Creg Ny Baa TT 2017 — Drone Race
+Footage") hosted on Mux. Config lives in `src/data/video.ts` (playback ID + poster
+timestamp) and playback is handled by `src/components/home/HeroVideoBackground.tsx`:
+muted/looped/autoplaying, no controls, and falls back to a static poster image for
+visitors with `prefers-reduced-motion` enabled. To swap the clip, update the
+`playbackId` in `src/data/video.ts` with the new Mux asset's playback ID.
 
 ### Commands
 - `npm run dev` — local dev server
@@ -28,8 +36,9 @@ Framer Motion, lucide-react.
 - `src/app/*` — one route per top-level nav item, plus `sitemap.ts` / `robots.ts`.
 
 ### Known gaps to fill in before launch
-- **Photography**: no real venue/TT photography has been supplied. `PlaceholderImage`
-  renders a stylised, clearly-labelled placeholder (never a misrepresented stock photo).
+- **Photography**: no real venue/TT photography has been supplied for still images
+  (the hero now uses real Mux drone video — see above). `PlaceholderImage` renders a
+  stylised, clearly-labelled placeholder elsewhere (never a misrepresented stock photo).
   Replace with `next/image` usage and real assets under `public/images/...` once supplied.
 - **Booking**: `siteConfig.bookingUrl` in `src/data/site.ts` is `null`. The "Book a Table"
   button falls back to a phone link until the real Dazzler booking URL is confirmed.

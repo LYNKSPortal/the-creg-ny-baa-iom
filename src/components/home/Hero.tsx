@@ -4,29 +4,14 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { BookTableButton } from "@/components/ui/BookTableButton";
+import { HeroVideoBackground } from "@/components/home/HeroVideoBackground";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] w-full items-end overflow-hidden bg-cng-black">
-      {/* Placeholder cinematic backdrop — replace with real hero photography/video of the Creg Ny Baa corner */}
-      <div
-        role="img"
-        aria-label="Placeholder — TT motorcycles racing around the famous Creg Ny Baa corner on the Isle of Man Mountain Road, with dramatic countryside views beyond"
-        className="placeholder-art absolute inset-0 bg-cng-black"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(200,16,46,0.25),transparent_55%)]" />
-        <svg
-          className="absolute inset-0 h-full w-full text-white/[0.06]"
-          viewBox="0 0 1200 800"
-          preserveAspectRatio="xMidYMid slice"
-          aria-hidden="true"
-        >
-          <path d="M0 620 C 200 520 350 680 550 560 S 900 420 1200 500" fill="none" stroke="currentColor" strokeWidth="6" />
-          <path d="M0 700 C 250 600 450 760 650 640 S 1000 500 1200 580" fill="none" stroke="#C6A66B" strokeOpacity="0.25" strokeWidth="3" />
-        </svg>
-        <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-sm border border-white/20 bg-black/40 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white/60 sm:right-6 sm:top-6">
-          Photography coming soon
-        </span>
+      {/* Drone footage of TT racing at the Creg Ny Baa corner (Mux) */}
+      <div className="absolute inset-0 bg-cng-black">
+        <HeroVideoBackground />
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/60 to-cng-black/10" />
