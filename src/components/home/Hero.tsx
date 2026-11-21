@@ -65,16 +65,16 @@ export function Hero() {
           <Image
             src="/awards/awards-for-exel.png"
             alt="Isle of Man Newspapers Awards for Excellence — Finalist"
-            width={72}
-            height={72}
-            style={{ width: 72, height: 72 }}
+            width={140}
+            height={140}
+            style={{ width: 140, height: 140 }}
           />
           <Image
             src="/awards/manx-menu.png"
             alt="Manx Menu Award Winner"
-            width={72}
-            height={72}
-            style={{ width: 72, height: 72 }}
+            width={140}
+            height={140}
+            style={{ width: 140, height: 140 }}
           />
         </motion.div>
       </div>
