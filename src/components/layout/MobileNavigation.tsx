@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
@@ -54,7 +55,7 @@ export function MobileNavigation() {
             transition={{ duration: 0.2 }}
           >
             <div className="flex items-center justify-between px-5 py-4">
-              <span className="font-display text-xl font-extrabold uppercase tracking-wide">Creg Ny Baa</span>
+              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={150} height={121} className="h-11 w-auto" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

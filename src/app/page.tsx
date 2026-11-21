@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/home/Hero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { siteConfig } from "@/data/site";
 
@@ -21,28 +21,32 @@ const features = [
     description:
       "Home-cooked pub classics, daily specials and a traditional Sunday roast, with an extensive gluten-free menu and dishes the whole family will enjoy.",
     href: "/menus",
-    imageAlt: "Placeholder — a plate of freshly cooked pub food at the Creg Ny Baa",
+    image: "/images/food/creg-ny-burger.jpg",
+    imageAlt: "The Creg-ny-Burger with homemade chips and onion rings",
   },
   {
     title: "TT Racing & VIP Hospitality",
     description:
       "Watch the world's fastest road racers sweep through the famous Creg corner from our exclusive balcony viewing and hospitality suites.",
     href: "/tt-2027",
-    imageAlt: "Placeholder — VIP guests watching TT racing from the Creg Ny Baa balcony",
+    image: "/images/tt/spectators-at-the-corner.jpg",
+    imageAlt: "Spectators lining the TT course at the Creg Ny Baa corner on race day",
   },
   {
     title: "Private Functions & Events",
     description:
       "From birthdays to corporate events, our first-floor Veranda Suite offers flexible space, private bar and uninterrupted countryside views.",
     href: "/functions-events",
-    imageAlt: "Placeholder — a private function taking place in the Veranda Suite",
+    image: "/images/events/function-room-set-up.jpg",
+    imageAlt: "The function room set up for a private celebration at the Creg Ny Baa",
   },
   {
     title: "The Creg Experience",
     description:
       "A warm welcome, breathtaking Mountain Road views and genuine Manx hospitality — discover what makes the Creg Ny Baa unlike anywhere else.",
     href: "/gallery",
-    imageAlt: "Placeholder — panoramic countryside view from the Creg Ny Baa",
+    image: "/images/venue/exterior-mountain-road.jpg",
+    imageAlt: "The Creg Ny Baa exterior on the Mountain Road, Isle of Man",
   },
 ];
 
@@ -120,8 +124,14 @@ export default function HomePage() {
       <section className="border-t border-white/10 bg-cng-black">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-2 lg:items-center lg:px-8">
           <Reveal>
-            <div className="aspect-[4/3] overflow-hidden rounded-sm">
-              <PlaceholderImage alt="Placeholder — TT racing motorcycle leaning through the Creg Ny Baa corner at speed" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/images/venue/exterior-bikes-lined-up.jpg"
+                alt="Motorcycles lined up outside the Creg Ny Baa during TT race week"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </Reveal>
           <Reveal delay={0.1}>

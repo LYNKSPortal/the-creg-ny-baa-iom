@@ -6,6 +6,8 @@ export type MenuCategory = {
   title: string;
   description: string;
   pdfHref: string | null; // set to the real menu PDF path/URL once supplied
+  image: string;
+  imageAlt: string;
 };
 
 const LUNCH_EVENING_PDF = "/menus/16.05.2025-Lunch-Evening-Gluten-Free.pdf";
@@ -18,6 +20,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "Freshly cooked traditional pub favourites, made in-house — from the Creg's famous battered cod to homemade pies, burgers, salads and light bites.",
     pdfHref: LUNCH_EVENING_PDF,
+    image: "/images/food/creg-ny-burger.jpg",
+    imageAlt: "The Creg-ny-Burger with homemade chips and onion rings",
   },
   {
     id: "specials",
@@ -25,6 +29,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "Our specials board changes regularly, making the most of seasonal ingredients alongside kitchen favourites — ask your server what's on today.",
     pdfHref: null,
+    image: "/images/food/lamb-shank.jpg",
+    imageAlt: "Slow-cooked lamb shank with mash and vegetables, a Creg Ny Baa specials board favourite",
   },
   {
     id: "sunday-roast",
@@ -32,6 +38,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "A traditional home-cooked Sunday roast, served with all the trimmings — a long-standing favourite with locals and visitors alike.",
     pdfHref: null,
+    image: "/images/food/sunday-roast.jpg",
+    imageAlt: "A traditional Sunday roast dinner with all the trimmings at the Creg Ny Baa",
   },
   {
     id: "childrens",
@@ -39,6 +47,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "Family-friendly dishes sized and priced for younger guests, including fish, chicken nuggets and homemade beef lasagne — see the Lunch & Evening menu for details.",
     pdfHref: LUNCH_EVENING_PDF,
+    image: "/images/food/chicken-goujons.jpg",
+    imageAlt: "Chicken goujons with chips, a family favourite at the Creg Ny Baa",
   },
   {
     id: "senior-citizens",
@@ -46,6 +56,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "Smaller, great-value portions of our favourite dishes for senior guests (and older children) — just let your server know you'd like the Senior Citizens sizing.",
     pdfHref: SENIOR_CITIZENS_PDF,
+    image: "/images/food/full-breakfast.jpg",
+    imageAlt: "A home-cooked meal served at the Creg Ny Baa",
   },
   {
     id: "gluten-free",
@@ -53,6 +65,8 @@ export const menuCategories: MenuCategory[] = [
     description:
       "An extensive gluten-free offering across starters, mains, light bites and sides, prepared with dedicated fryers and utensils and flagged clearly when served.",
     pdfHref: LUNCH_EVENING_PDF,
+    image: "/images/food/pie-and-chips.jpg",
+    imageAlt: "Homemade pie with chips, available gluten-free at the Creg Ny Baa",
   },
 ];
 

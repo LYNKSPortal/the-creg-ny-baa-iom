@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { products, merchandiseNote } from "@/data/merchandise";
@@ -17,8 +17,19 @@ export const metadata: Metadata = {
 export default function MerchandisePage() {
   return (
     <>
-      <section className="bg-cng-black py-20 text-center sm:py-28">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-cng-black py-24 sm:py-32">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/merch/bar-merch-display.jpg"
+            alt="Creg Ny Baa branded clothing on display above the bar"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
+        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">Shop</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             Merchandise
@@ -42,7 +53,13 @@ export default function MerchandisePage() {
               <Reveal key={product.id} delay={i * 0.06}>
                 <div className="flex h-full flex-col overflow-hidden border border-cng-black/10 bg-cng-white">
                   <div className="relative aspect-square">
-                    <PlaceholderImage alt={`Placeholder — ${product.name} product photo`} tone="light" />
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
                     <span
                       className={cn(
                         "absolute left-3 top-3 z-10 rounded-sm px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest",

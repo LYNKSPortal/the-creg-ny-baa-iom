@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Download, FileText } from "lucide-react";
 import { menuCategories } from "@/data/menus";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { cn } from "@/lib/utils";
 
 export function MenuTabs() {
@@ -37,8 +37,14 @@ export function MenuTabs() {
         aria-labelledby={`tab-${active.id}`}
         className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-center"
       >
-        <div className="aspect-[4/3] overflow-hidden rounded-sm">
-          <PlaceholderImage alt={`Placeholder — ${active.title} dish at the Creg Ny Baa`} tone="light" />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+          <Image
+            src={active.image}
+            alt={active.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
         <div>
           <h3 className="font-display text-3xl font-bold uppercase tracking-tight text-cng-black">{active.title}</h3>

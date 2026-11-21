@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { galleryCategories, galleryImages, type GalleryCategory } from "@/data/gallery";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { cn } from "@/lib/utils";
 
 export function GalleryGrid() {
@@ -76,8 +76,14 @@ export function GalleryGrid() {
             )}
             aria-label={`View image: ${img.alt}`}
           >
-            <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-              <PlaceholderImage alt={img.alt} />
+            <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
+              <Image
+                src={img.image}
+                alt={img.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </button>
         ))}
@@ -125,8 +131,14 @@ export function GalleryGrid() {
             >
               <ChevronRight className="h-5 w-5" aria-hidden="true" />
             </button>
-            <div className="h-[70vh] w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-              <PlaceholderImage alt={filtered[lightboxIndex].alt} />
+            <div className="relative h-[70vh] w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={filtered[lightboxIndex].image}
+                alt={filtered[lightboxIndex].alt}
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
             </div>
           </motion.div>
         ) : null}

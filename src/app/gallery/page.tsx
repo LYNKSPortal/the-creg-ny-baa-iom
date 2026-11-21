@@ -20,8 +20,7 @@ export default function GalleryPage() {
             Gallery
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/75">
-            Racing, food, the venue and our events — a look at life at the Creg Ny Baa. Real
-            venue photography will appear here as it is supplied.
+            Racing, food, the venue and our events — a real look at life at the Creg Ny Baa.
           </p>
         </div>
       </section>

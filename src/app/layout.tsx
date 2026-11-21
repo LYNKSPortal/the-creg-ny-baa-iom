@@ -60,9 +60,6 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | Isle of Man TT Pub, Restaurant & Events Venue`,
     description: siteConfig.description,
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

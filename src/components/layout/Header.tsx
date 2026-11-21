@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { primaryNav } from "@/data/nav";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { BookTableButton } from "@/components/ui/BookTableButton";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
@@ -29,13 +31,15 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex flex-col leading-none">
-          <span className="font-display text-xl font-extrabold uppercase tracking-wide text-white sm:text-2xl">
-            Creg Ny Baa
-          </span>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-cng-gold">
-            Isle of Man TT
-          </span>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/logo/logo.png"
+            alt={`${siteConfig.name} logo`}
+            width={150}
+            height={121}
+            priority
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Trophy, Binoculars, GlassWater } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { mgpClassicTt2026Packages } from "@/data/hospitality";
@@ -41,7 +41,14 @@ export default function MgpClassicTtPage() {
     <>
       <section className="relative overflow-hidden bg-cng-black py-24 sm:py-32">
         <div className="absolute inset-0">
-          <PlaceholderImage alt="Placeholder — classic racing motorcycle passing the Creg Ny Baa during the Manx Grand Prix" />
+          <Image
+            src="/images/venue/exterior-bikes-lined-up.jpg"
+            alt="Motorcycles lined up outside the Creg Ny Baa during race week"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/70 to-cng-black/30" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">

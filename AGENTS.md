@@ -53,17 +53,32 @@ Real venue PDFs live in `public/menus/` and are wired up as follows:
 - No Sunday Roast or Daily Specials PDF was supplied — those categories stay
   description-only (`pdfHref: null`) until menus are provided.
 
+### Real photography (sourced from cregnybaa.com)
+Real venue photography, the real logo and the Manx Menu Award badge were pulled from
+the owner's existing site (cregnybaa.com) and saved under `public/images/`:
+- `images/logo/` — the real "The Famous Creg Ny Baa" logo (colour + white), used in
+  `Header`, `Footer` and `MobileNavigation`, plus `src/app/icon.png` as the favicon.
+- `images/venue/`, `images/food/`, `images/events/`, `images/tt/`, `images/merch/` —
+  real photos used across the homepage, `/menus` (`MenuTabs`), `/functions-events`,
+  `/tt-2027`, `/mgp-classic-tt`, `/merchandise` and the full `/gallery` grid
+  (`src/data/gallery.ts`).
+- `images/awards/manx-menu-award.png` — real "Manx Menu Award Winner" badge, shown in
+  the footer.
+- `FeatureCard` still supports an `image`-less fallback to `PlaceholderImage` for any
+  future section that doesn't yet have a real photo — use that pattern for new sections.
+- `src/data/testimonials.ts`, `siteConfig.bookingUrl` (real Dazzler link) and
+  `siteConfig.social.facebook` were also populated from the live site's real content.
+
 ### Known gaps to fill in before launch
-- **Photography**: no real venue/TT photography has been supplied for still images
-  (the hero now uses real Mux drone video — see above). `PlaceholderImage` renders a
-  stylised, clearly-labelled placeholder elsewhere (never a misrepresented stock photo).
-  Replace with `next/image` usage and real assets under `public/images/...` once supplied.
-- **Booking**: `siteConfig.bookingUrl` in `src/data/site.ts` is `null`. The "Book a Table"
-  button falls back to a phone link until the real Dazzler booking URL is confirmed.
-- **Testimonials**: `src/data/testimonials.ts` is intentionally empty — no genuine,
-  attributed customer quotes were supplied. Add real quotes (with source) there.
-- **Merchandise**: `src/data/merchandise.ts` product names/prices/images are placeholders.
-- **Social links**: `siteConfig.social` is empty until Facebook/Instagram URLs are verified.
-- **Opening hours**: Sunday evening hours are marked unconfirmed in `src/data/hours.ts`.
-- `og-image.jpg` referenced in metadata does not yet exist in `public/` — add one before relying on social share previews.
+- **Menu item photography**: category photos in `MenuTabs`/gallery are representative
+  dishes, not a dedicated photo per PDF menu — fine for now, swap in closer matches if
+  better photography becomes available.
+- **Merchandise**: only 4 products have real photos (2 hoodies, bobble hat, beanie) in
+  `src/data/merchandise.ts` — prices are still `"Price TBC"`. Add more products/prices
+  as they're confirmed.
+- **Social links**: `siteConfig.social.instagram` is still `null` — add once confirmed.
+- **Opening hours**: Sunday evening hours are marked unconfirmed in `src/data/hours.ts`
+  (the live site doesn't list Sunday evening hours either).
+- `og-image.jpg` referenced in layout metadata does not yet exist in `public/` — add one
+  (e.g. a cropped venue exterior photo) before relying on social share previews.
 <!-- END:project-notes -->

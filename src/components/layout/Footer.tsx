@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { primaryNav } from "@/data/nav";
 import { siteConfig, legalNotices } from "@/data/site";
@@ -28,13 +29,24 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-2xl font-extrabold uppercase tracking-wide text-white">
-              {siteConfig.shortName}
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-white/65">
+            <Image
+              src="/images/logo/logo.png"
+              alt={`${siteConfig.name} logo`}
+              width={150}
+              height={121}
+              className="h-16 w-auto"
+            />
+            <p className="mt-4 text-sm leading-relaxed text-white/65">
               An Isle of Man icon — legendary TT race corner, traditional Manx pub, home-cooked
               food and premier events venue on the Mountain Road.
             </p>
+            <Image
+              src="/images/awards/manx-menu-award.png"
+              alt="Manx Menu Award Winner"
+              width={120}
+              height={120}
+              className="mt-5 h-16 w-16"
+            />
             <div className="mt-5 flex gap-3">
               {siteConfig.social.facebook ? (
                 <a

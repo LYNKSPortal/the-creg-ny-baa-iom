@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Check, AlertTriangle, Image as ImageIcon, Download } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { veranda, funeralWakes, meetingPackages } from "@/data/hospitality";
@@ -21,7 +21,14 @@ export default function FunctionsEventsPage() {
     <>
       <section className="relative overflow-hidden bg-cng-black py-24 sm:py-32">
         <div className="absolute inset-0">
-          <PlaceholderImage alt="Placeholder — the Veranda Suite set up for a private function, with balcony doors open to the countryside" />
+          <Image
+            src="/images/events/function-room-set-up.jpg"
+            alt="The function room set up for a private celebration at the Creg Ny Baa"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/70 to-cng-black/30" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -67,8 +74,14 @@ export default function FunctionsEventsPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="aspect-[4/5] overflow-hidden rounded-sm">
-                <PlaceholderImage alt="Placeholder — view from the Veranda Suite balcony over the TT course" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/events/wedding-pit-lane.jpg"
+                  alt="A wedding ceremony hosted at the Creg Ny Baa, with a racing-themed 'Pit Lane' sign"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>
@@ -127,13 +140,26 @@ export default function FunctionsEventsPage() {
       {/* Buffet & catering menus */}
       <section className="border-t border-cng-black/10 bg-cng-cream">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Catering Options"
-              title="Buffet & Catering Menus"
-              description="Tailored homemade buffets for every kind of event — from christenings and birthdays to club events and funeral wakes. Download a menu below or get in touch to discuss your requirements."
-            />
-          </Reveal>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <SectionHeading
+                eyebrow="Catering Options"
+                title="Buffet & Catering Menus"
+                description="Tailored homemade buffets for every kind of event — from christenings and birthdays to club events and funeral wakes. Download a menu below or get in touch to discuss your requirements."
+              />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="relative aspect-[16/9] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/food/sausage-rolls.jpg"
+                  alt="Our famous Creg recipe homemade sausage rolls, a buffet favourite"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {buffetMenus.map((menu, i) => (
               <Reveal key={menu.id} delay={i * 0.05}>

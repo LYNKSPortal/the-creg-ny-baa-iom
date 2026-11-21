@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Flag, Binoculars, Users, Wallet, Clock, Car } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { EventCard } from "@/components/ui/EventCard";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
 import { ContactCTA } from "@/components/ui/ContactCTA";
@@ -59,7 +59,14 @@ export default function TT2027Page() {
     <>
       <section className="relative overflow-hidden bg-cng-black py-28 sm:py-36">
         <div className="absolute inset-0">
-          <PlaceholderImage alt="Placeholder — TT racing motorcycle at speed approaching the Creg Ny Baa corner, race week" />
+          <Image
+            src="/images/tt/spectators-at-the-corner.jpg"
+            alt="Spectators lining the Mountain Road at the Creg Ny Baa corner during TT race week"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
         <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
