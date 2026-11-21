@@ -92,7 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         {/* Seasonal Christmas announcement, dates/copy live in src/data/christmas.ts, update each year. */}
         <AnnouncementBanner startDate={christmasSeason.activeFrom} endDate={christmasSeason.activeUntil} href="/menus#christmas">
-          Our Christmas menus are now available, {christmasSeason.availability.toLowerCase()}: view menus &amp; book your festive table.
+          Christmas menus are here, {christmasSeason.dateRange}: view menus &amp; book your festive table.
         </AnnouncementBanner>
         <Header />
         <main id="main-content" className="flex-1">

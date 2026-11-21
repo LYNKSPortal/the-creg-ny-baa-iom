@@ -14,7 +14,7 @@ export const eveningHours: ServicePeriod[] = [
   { days: "Friday – Saturday", time: "16:30 – 20:30", confirmed: true },
   {
     days: "Sunday evening",
-    time: "Arrangements to be confirmed",
+    time: "Please call to check",
     confirmed: false,
   },
 ];
@@ -22,4 +22,6 @@ export const eveningHours: ServicePeriod[] = [
 export const hoursNotes = {
   closingTimesNote:
     "Some closing times are provisional and subject to confirmation; please call the pub directly to check before travelling, especially outside peak season.",
+  sundayEveningNote:
+    "We haven't confirmed a standard Sunday evening service yet, so please call 01624 676948 before planning a Sunday evening visit.",
 };

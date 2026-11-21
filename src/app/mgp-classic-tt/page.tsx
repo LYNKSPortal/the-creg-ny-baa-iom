@@ -4,6 +4,7 @@ import { Trophy, Binoculars, GlassWater } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
+import { ArchiveDisclosure } from "@/components/ui/ArchiveDisclosure";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -97,18 +98,20 @@ export default function MgpClassicTtPage() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <SectionHeading
-              eyebrow="Reference Only · Not Current"
-              title="August 2026 Hospitality"
-              description="Details below are retained from our August 2026 event as a reference and do not represent a current offering. Updated hospitality details will be published when future dates are announced."
+              eyebrow="Not Current"
+              title="August 2026 Hospitality Archive"
+              description="Future MGP and Classic TT hospitality hasn't been announced. The August 2026 details below are kept purely for reference."
             />
           </Reveal>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {mgpClassicTt2026Packages.map((pkg, i) => (
-              <Reveal key={pkg.id} delay={i * 0.1}>
-                <HospitalityPackageCard pkg={pkg} />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.1} className="mt-10">
+            <ArchiveDisclosure label="Show August 2026 hospitality pricing (archived, not current)">
+              <div className="grid gap-6 lg:grid-cols-2">
+                {mgpClassicTt2026Packages.map((pkg) => (
+                  <HospitalityPackageCard key={pkg.id} pkg={pkg} />
+                ))}
+              </div>
+            </ArchiveDisclosure>
+          </Reveal>
           <p className="mt-6 text-xs text-cng-grey-500">{legalNotices.cashOnRaceDays}</p>
         </div>
       </section>

@@ -74,12 +74,12 @@ export const glutenFreeInfo = {
   heading: "Our Gluten-Free Offering",
   body: [
     "We're very proud of our gluten-free menu, specials and desserts, with many of our pub favourites available gluten-free, including our famous battered cod in its own gluten-free batter.",
-    "We ensure there is no cross-contamination: separate fryers and utensils are used for gluten-free food, kept apart from standard menu preparation.",
+    "To reduce the risk of cross-contact, gluten-free food is prepared using separate fryers and utensils, kept apart from standard menu preparation.",
     "Look out for (GF) on our specials board: this means that dish can be prepared gluten-free, but you must tell your server you'd like the gluten-free option when ordering.",
     "Every gluten-free meal is brought to your table with a flag; if yours doesn't arrive with one, please question it with your server.",
   ],
   disclaimer:
-    "While we take great care with our gluten-free preparation, our kitchen handles gluten-containing ingredients and we cannot guarantee a completely gluten-free environment. Please speak to our team about your requirements before ordering if you have a severe allergy or intolerance.",
+    "Our kitchen handles gluten-containing ingredients, so while we take great care with our gluten-free preparation and dedicated equipment, we cannot guarantee a completely gluten-free environment. Please speak to our team about your requirements before ordering if you have a severe allergy or intolerance.",
 };
 
 export const diningNotes = {

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { EventCard } from "@/components/ui/EventCard";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
+import { ArchiveDisclosure } from "@/components/ui/ArchiveDisclosure";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -113,23 +114,25 @@ export default function TT2027Page() {
         </div>
       </section>
 
-      {/* Historical packages */}
+      {/* Historical packages — collapsed by default so it reads as archive, not current pricing */}
       <section className="border-t border-cng-black/10 bg-cng-cream">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <SectionHeading
-              eyebrow="Reference Only · Not Current"
-              title="2026 Hospitality Packages"
-              description="These packages reflect our 2026 TT hospitality offering and are retained here as historical reference only. They do not represent current pricing or availability for TT 2027; updated details will replace this content once confirmed."
+              eyebrow="Not Current"
+              title="2026 Hospitality Archive"
+              description="TT 2027 pricing hasn't been announced. The 2026 figures below are kept purely for reference and don't apply to TT 2027."
             />
           </Reveal>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {tt2026Packages.map((pkg, i) => (
-              <Reveal key={pkg.id} delay={i * 0.1}>
-                <HospitalityPackageCard pkg={pkg} />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.1} className="mt-10">
+            <ArchiveDisclosure label="Show 2026 hospitality pricing (archived, not current)">
+              <div className="grid gap-6 lg:grid-cols-2">
+                {tt2026Packages.map((pkg) => (
+                  <HospitalityPackageCard key={pkg.id} pkg={pkg} />
+                ))}
+              </div>
+            </ArchiveDisclosure>
+          </Reveal>
         </div>
       </section>
 

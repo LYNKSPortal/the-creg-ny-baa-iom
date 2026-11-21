@@ -9,6 +9,8 @@ export const christmasSeason = {
   menuPdfHref: "/menus/Creg-Christmas-Menus-2026-.pdf",
   preOrderPdfHref: "/menus/CHristmas-Pre-Order-26.pdf",
   availability: "Available from 1st to 23rd December",
+  // Short form for the sitewide banner, which already supplies the "available" wording.
+  dateRange: "1st–23rd December",
   openingArrangements: [
     { label: "Christmas Eve", detail: "Bookings from 12:00 till 4:45pm. Pub closes 7:00pm. Menu is Pub Favourites & Specials of the Day." },
     { label: "Christmas Day & Boxing Day", detail: "Closed" },

@@ -16,7 +16,7 @@ export const homeFaqs: Faq[] = [
   {
     question: "What are the Creg Ny Baa's opening hours?",
     answer:
-      "Lunch is served Monday to Thursday 12:00–15:00, and Friday to Sunday from 12:00. Evening service runs Monday to Thursday 16:30–19:45 and Friday to Saturday 16:30–20:30. We may close earlier than advertised during quieter periods, so please call 01624 676948 ahead of your visit.",
+      "Lunch is served Monday to Thursday 12:00–15:00, and Friday to Sunday from 12:00. Evening service runs Monday to Thursday 16:30–19:45 and Friday to Saturday 16:30–20:30. Sunday evening hours aren't confirmed yet, so please call 01624 676948 to check before planning a Sunday evening visit. We may also close earlier than advertised during quieter periods.",
   },
   {
     question: "Do I need to book a table at the Creg Ny Baa?",

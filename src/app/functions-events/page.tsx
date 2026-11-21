@@ -141,7 +141,11 @@ export default function FunctionsEventsPage() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-4 text-xs text-cng-grey-500">Prices shown are indicative and may be updated; please confirm current rates when enquiring.</p>
+          <p className="mt-4 text-sm text-cng-grey-700">
+            The meeting package price includes use of the room for your meeting. The separate room hire
+            rates under Buffet &amp; Catering Menus below apply to evening and party bookings, not meeting rooms.
+          </p>
+          <p className="mt-2 text-xs text-cng-grey-500">Prices shown are indicative and may be updated; please confirm current rates when enquiring.</p>
         </div>
       </section>
 
