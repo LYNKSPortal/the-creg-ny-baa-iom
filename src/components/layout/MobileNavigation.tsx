@@ -36,7 +36,7 @@ export function MobileNavigation() {
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         aria-label="Open navigation menu"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-white/20 text-white"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-cng-black/15 text-cng-black"
       >
         <Menu className="h-5 w-5" aria-hidden="true" />
       </button>
@@ -55,7 +55,7 @@ export function MobileNavigation() {
             transition={{ duration: 0.2 }}
           >
             <div className="flex items-center justify-between px-5 py-4">
-              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={150} height={121} className="h-11 w-auto" />
+              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={100} height={80} className="h-auto w-[100px]" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

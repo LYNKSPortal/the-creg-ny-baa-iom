@@ -24,10 +24,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "border-b border-white/10 bg-cng-black/95 shadow-lg shadow-black/20 backdrop-blur-sm"
-          : "border-b border-transparent bg-gradient-to-b from-black/60 to-transparent",
+        "sticky top-0 z-50 w-full border-b border-cng-black/10 bg-cng-white transition-shadow duration-300",
+        scrolled && "shadow-md shadow-black/5",
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
@@ -35,10 +33,10 @@ export function Header() {
           <Image
             src="/images/logo/logo.png"
             alt={`${siteConfig.name} logo`}
-            width={150}
-            height={121}
+            width={100}
+            height={80}
             priority
-            className="h-12 w-auto sm:h-14"
+            className="h-auto w-[100px]"
           />
         </Link>
 
@@ -51,8 +49,8 @@ export function Header() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative py-2 text-sm font-semibold uppercase tracking-wide text-white/85 transition-colors hover:text-white",
-                  active && "text-white",
+                  "relative py-2 text-sm font-semibold uppercase tracking-wide text-cng-grey-700 transition-colors hover:text-cng-black",
+                  active && "text-cng-black",
                 )}
               >
                 {link.label}

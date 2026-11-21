@@ -8,7 +8,7 @@ import { HeroVideoBackground } from "@/components/home/HeroVideoBackground";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] w-full items-end overflow-hidden bg-cng-black">
+    <section className="relative flex min-h-[85vh] w-full items-end overflow-hidden bg-cng-black">
       {/* Drone footage of TT racing at the Creg Ny Baa corner (Mux) */}
       <div className="absolute inset-0 bg-cng-black">
         <HeroVideoBackground />
@@ -16,7 +16,7 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/60 to-cng-black/10" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-20 pt-40 sm:px-6 sm:pb-28 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-20 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
