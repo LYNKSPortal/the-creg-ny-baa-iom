@@ -40,38 +40,41 @@ export function Header() {
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-          {primaryNav.map((link) => {
-            const active = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative py-2 text-sm font-semibold uppercase tracking-wide text-cng-grey-700 transition-colors hover:text-cng-black",
-                  active && "text-cng-black",
-                )}
-              >
-                {link.label}
-                <span
-                  className={cn(
-                    "absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-cng-red transition-transform duration-200",
-                    active && "scale-x-100",
-                  )}
-                  aria-hidden="true"
-                />
-              </Link>
-            );
-          })}
-        </nav>
-
         <div className="hidden lg:block">
           <BookTableButton />
         </div>
 
         <MobileNavigation />
       </div>
+
+      <nav
+        aria-label="Primary"
+        className="hidden items-center justify-center gap-7 border-t border-cng-black/10 px-4 py-3 sm:px-6 lg:flex lg:px-8"
+      >
+        {primaryNav.map((link) => {
+          const active = pathname === link.href;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={active ? "page" : undefined}
+              className={cn(
+                "relative py-2 text-sm font-semibold uppercase tracking-wide text-cng-grey-700 transition-colors hover:text-cng-black",
+                active && "text-cng-black",
+              )}
+            >
+              {link.label}
+              <span
+                className={cn(
+                  "absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-cng-red transition-transform duration-200",
+                  active && "scale-x-100",
+                )}
+                aria-hidden="true"
+              />
+            </Link>
+          );
+        })}
+      </nav>
     </header>
   );
 }
