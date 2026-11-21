@@ -30,7 +30,7 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image
-              src="/images/logo/logo.png"
+              src="/white-logo.png"
               alt={`${siteConfig.name} logo`}
               width={100}
               height={80}
