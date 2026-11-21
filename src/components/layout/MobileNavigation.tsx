@@ -55,7 +55,7 @@ export function MobileNavigation() {
             transition={{ duration: 0.2 }}
           >
             <div className="flex items-center justify-between px-5 py-4">
-              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={100} height={80} className="h-auto w-[100px]" />
+              <Image src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width={100} height={80} style={{ width: 100, height: "auto" }} />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

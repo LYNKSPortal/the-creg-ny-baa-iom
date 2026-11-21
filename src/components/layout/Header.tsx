@@ -28,7 +28,7 @@ export function Header() {
         scrolled && "shadow-md shadow-black/5",
       )}
     >
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo/logo.png"
@@ -36,7 +36,7 @@ export function Header() {
             width={100}
             height={80}
             priority
-            className="h-auto w-[100px]"
+            style={{ width: 100, height: "auto" }}
           />
         </Link>
 

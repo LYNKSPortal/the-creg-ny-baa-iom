@@ -34,7 +34,7 @@ export function Footer() {
               alt={`${siteConfig.name} logo`}
               width={100}
               height={80}
-              className="h-auto w-[100px]"
+              style={{ width: 100, height: "auto" }}
             />
             <p className="mt-4 text-sm leading-relaxed text-white/65">
               An Isle of Man icon — legendary TT race corner, traditional Manx pub, home-cooked
