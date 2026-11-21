@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Reveal } from "@/components/ui/Reveal";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { ContactCTA } from "@/components/ui/ContactCTA";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description:
+    "Explore the Creg Ny Baa — TT racing, food and dining, the venue, and private events and hospitality, in pictures.",
+  alternates: { canonical: "/gallery" },
+};
+
+export default function GalleryPage() {
+  return (
+    <>
+      <section className="bg-cng-black py-20 text-center sm:py-28">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">In Pictures</p>
+          <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
+            Gallery
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/75">
+            Racing, food, the venue and our events — a look at life at the Creg Ny Baa. Real
+            venue photography will appear here as it is supplied.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-cng-cream">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <Reveal>
+            <GalleryGrid />
+          </Reveal>
+        </div>
+      </section>
+
+      <ContactCTA />
+    </>
+  );
+}

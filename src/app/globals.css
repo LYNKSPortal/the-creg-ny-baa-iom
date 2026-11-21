@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --cng-black: #111315;
+  --cng-black-soft: #1b1d20;
+  --cng-cream: #f8f6f2;
+  --cng-white: #ffffff;
+  --cng-red: #c8102e;
+  --cng-red-dark: #9c0c23;
+  --cng-gold: #c6a66b;
+  --cng-grey-100: #f1efe9;
+  --cng-grey-300: #d9d5cc;
+  --cng-grey-500: #8d8a82;
+  --cng-grey-700: #4a4843;
+}
+
+@theme inline {
+  --color-cng-black: var(--cng-black);
+  --color-cng-black-soft: var(--cng-black-soft);
+  --color-cng-cream: var(--cng-cream);
+  --color-cng-white: var(--cng-white);
+  --color-cng-red: var(--cng-red);
+  --color-cng-red-dark: var(--cng-red-dark);
+  --color-cng-gold: var(--cng-gold);
+  --color-cng-grey-100: var(--cng-grey-100);
+  --color-cng-grey-300: var(--cng-grey-300);
+  --color-cng-grey-500: var(--cng-grey-500);
+  --color-cng-grey-700: var(--cng-grey-700);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-barlow);
+
+  --animate-fade-up: fade-up 0.7s ease-out forwards;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background: var(--cng-cream);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--cng-red);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+::selection {
+  background: var(--cng-red);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cng-gold);
+  outline-offset: 3px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Placeholder imagery pattern — used until real venue photography is supplied */
+.placeholder-art {
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 2px,
+      transparent 2px,
+      transparent 14px
+    ),
+    radial-gradient(circle at 20% 20%, rgba(198, 166, 107, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(200, 16, 46, 0.22), transparent 55%);
+}
