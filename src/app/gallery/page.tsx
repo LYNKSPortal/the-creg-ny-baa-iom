@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { ContactCTA } from "@/components/ui/ContactCTA";
@@ -13,8 +14,19 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <section className="bg-cng-black py-20 text-center sm:py-28">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-cng-black py-20 text-center sm:py-28">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/venue/exterior-group-photo.jpg"
+            alt="A group photo outside the Creg Ny Baa's balcony and traditional signage"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/75 to-cng-black/40" />
+        <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cng-gold">In Pictures</p>
           <h1 className="mt-4 text-balance font-display text-5xl font-black uppercase tracking-tight text-white sm:text-6xl">
             Gallery
