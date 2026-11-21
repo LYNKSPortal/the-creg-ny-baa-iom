@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { BookTableButton } from "@/components/ui/BookTableButton";
@@ -53,6 +54,28 @@ export function Hero() {
           <PrimaryButton href="/tt-2027" variant="outline">
             Explore TT Experiences
           </PrimaryButton>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-10 flex flex-wrap items-center gap-5"
+        >
+          <Image
+            src="/awards/awards-for-exel.png"
+            alt="Isle of Man Newspapers Awards for Excellence — Finalist"
+            width={72}
+            height={72}
+            style={{ width: 72, height: 72 }}
+          />
+          <Image
+            src="/awards/manx-menu.png"
+            alt="Manx Menu Award Winner"
+            width={72}
+            height={72}
+            style={{ width: 72, height: 72 }}
+          />
         </motion.div>
       </div>
 
