@@ -26,7 +26,7 @@ export function HeroVideoBackground() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const posterUrl = `https://image.mux.com/${heroVideo.playbackId}/thumbnail.jpg?time=${heroVideo.posterTime}`;
+  const posterUrl = `https://image.mux.com/${heroVideo.playbackId}/thumbnail.jpg?time=${heroVideo.posterTime}&width=1200`;
 
   if (reducedMotion) {
     return (
@@ -50,7 +50,10 @@ export function HeroVideoBackground() {
       loop
       playsInline
       nohotkeys
+      preload="auto"
+      maxResolution="720p"
       thumbnailTime={heroVideo.posterTime}
+      poster={posterUrl}
       metadata={{ video_title: heroVideo.title }}
       aria-label={heroVideo.title}
       className="absolute inset-0 h-full w-full"
