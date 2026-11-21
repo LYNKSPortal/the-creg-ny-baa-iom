@@ -11,13 +11,14 @@ import { veranda, funeralWakes, meetingPackages } from "@/data/hospitality";
 import { buffetMenus, buffetNotes } from "@/data/buffets";
 import { functionsEventsFaqs } from "@/data/faqs";
 import { siteConfig } from "@/data/site";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Functions, Events & Funeral Wakes",
   description:
     "Private functions, celebrations, corporate meetings and funeral wakes at the Creg Ny Baa's first-floor Veranda Suite (up to 100 guests), overlooking the Isle of Man TT course in Onchan.",
   alternates: { canonical: "/functions-events" },
-  openGraph: { url: "/functions-events" },
+  openGraph: pageOpenGraph("/functions-events"),
 };
 
 export default function FunctionsEventsPage() {

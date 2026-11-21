@@ -9,15 +9,14 @@ import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { homeFaqs } from "@/data/faqs";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Isle of Man TT Pub, Restaurant & Race-Day Hospitality | The Famous Creg Ny Baa",
   description:
     "The Famous Creg Ny Baa: a legendary Isle of Man TT corner, traditional Manx pub and restaurant on the Mountain Road, Onchan. Home-cooked food, gluten-free menu, private functions and race-day hospitality.",
   alternates: { canonical: "/" },
-  openGraph: {
-    url: "/",
-  },
+  openGraph: pageOpenGraph("/"),
 };
 
 const features = [

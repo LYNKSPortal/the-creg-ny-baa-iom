@@ -50,7 +50,7 @@ export function localBusinessJsonLd() {
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
     url: siteConfig.url,
-    image: `${siteConfig.url}/og-image.jpg`,
+    image: `${siteConfig.url}/meta-og-graph-facebook.jpg`,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     servesCuisine: ["British", "Pub food", "Manx"],

@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AnnouncementBanner } from "@/components/ui/AnnouncementBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { siteConfig } from "@/data/site";
+import { siteConfig, ogImage } from "@/data/site";
 import { christmasSeason } from "@/data/christmas";
 import { localBusinessJsonLd } from "@/lib/structuredData";
 
@@ -48,19 +48,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | Isle of Man TT Pub, Restaurant & Events Venue`,
     description: siteConfig.description,
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | Isle of Man TT Pub, Restaurant & Events Venue`,
     description: siteConfig.description,
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/",

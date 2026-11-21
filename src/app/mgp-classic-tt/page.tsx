@@ -10,13 +10,14 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { mgpClassicTt2026Packages } from "@/data/hospitality";
 import { mgpFaqs } from "@/data/faqs";
 import { legalNotices } from "@/data/site";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "MGP & Classic TT Hospitality",
   description:
     "Manx Grand Prix and Classic TT hospitality and race viewing at the Creg Ny Baa on the Mountain Road: balcony viewing over the famous corner in a relaxed, historic racing atmosphere every August.",
   alternates: { canonical: "/mgp-classic-tt" },
-  openGraph: { url: "/mgp-classic-tt" },
+  openGraph: pageOpenGraph("/mgp-classic-tt"),
 };
 
 const highlights = [

@@ -35,6 +35,17 @@ export const siteConfig = {
   },
 };
 
+// Shared Open Graph / Twitter share image. Supplied directly by the venue
+// for use on Facebook, WhatsApp and other link-preview surfaces, so every
+// page's openGraph metadata should include this (see src/lib/structuredData.ts
+// `pageOpenGraph`), not just the root layout default.
+export const ogImage = {
+  url: "/meta-og-graph-facebook.jpg",
+  width: 1000,
+  height: 1000,
+  alt: `${siteConfig.name} exterior on the Mountain Road`,
+};
+
 export const legalNotices = {
   cashOnRaceDays:
     "Please bring cash on race days, card payment queues and connectivity can be unpredictable when the Mountain Road is at its busiest.",

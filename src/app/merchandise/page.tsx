@@ -11,13 +11,14 @@ import { products, merchandiseNote } from "@/data/merchandise";
 import { merchandiseFaqs } from "@/data/faqs";
 import { siteConfig } from "@/data/site";
 import { productsJsonLd } from "@/lib/structuredData";
+import { pageOpenGraph } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Merchandise",
   description: "Creg Ny Baa branded merchandise, hoodies, bobble hats and beanies. Enquire by email to purchase or check availability.",
   alternates: { canonical: "/merchandise" },
-  openGraph: { url: "/merchandise" },
+  openGraph: pageOpenGraph("/merchandise"),
 };
 
 export default function MerchandisePage() {

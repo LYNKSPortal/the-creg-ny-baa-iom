@@ -4,13 +4,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Explore the Creg Ny Baa in pictures: TT racing, food and dining, the venue, and private events and hospitality on the Isle of Man's Mountain Road.",
   alternates: { canonical: "/gallery" },
-  openGraph: { url: "/gallery" },
+  openGraph: pageOpenGraph("/gallery"),
 };
 
 export default function GalleryPage() {

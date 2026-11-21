@@ -11,13 +11,14 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { tt2026Packages } from "@/data/hospitality";
 import { tt2027Faqs } from "@/data/faqs";
 import { legalNotices } from "@/data/site";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "TT 2027 Hospitality & Race Viewing",
   description:
     "Experience the Isle of Man TT 2027 from the legendary Creg Ny Baa corner on the Mountain Road: exclusive balcony viewing, VIP hospitality, grandstand information and race-day details. Details for 2027 coming soon.",
   alternates: { canonical: "/tt-2027" },
-  openGraph: { url: "/tt-2027" },
+  openGraph: pageOpenGraph("/tt-2027"),
 };
 
 const raceDayInfo = [

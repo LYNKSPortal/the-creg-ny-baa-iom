@@ -12,13 +12,14 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { glutenFreeInfo, diningNotes, menuCategories } from "@/data/menus";
 import { menusFaqs } from "@/data/faqs";
 import { menuJsonLd } from "@/lib/structuredData";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Our Menus",
   description:
     "Freshly cooked traditional pub food at the Creg Ny Baa in Onchan: daily specials, Sunday roasts, family and senior menus, and an extensive gluten-free offering.",
   alternates: { canonical: "/menus" },
-  openGraph: { url: "/menus" },
+  openGraph: pageOpenGraph("/menus"),
 };
 
 export default function MenusPage() {
