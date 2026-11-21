@@ -17,7 +17,7 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-cng-black via-cng-black/60 to-cng-black/10" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-20 sm:text-left lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-32 pt-28 text-center sm:px-6 sm:pb-28 sm:pt-20 sm:text-left lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
