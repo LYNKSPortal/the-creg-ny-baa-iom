@@ -8,6 +8,7 @@ import { ContactCTA } from "@/components/ui/ContactCTA";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { FaqSection } from "@/components/seo/FaqSection";
+import { ChristmasSection } from "@/components/menus/ChristmasSection";
 import { homeFaqs } from "@/data/faqs";
 import { pageOpenGraph } from "@/lib/seo";
 
@@ -161,6 +162,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <ChristmasSection />
 
       <FaqSection items={homeFaqs} title="Frequently Asked Questions" eyebrow="Good to Know" />
 
