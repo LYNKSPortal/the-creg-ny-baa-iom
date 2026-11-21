@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Phone } from "lucide-react";
 import { primaryNav } from "@/data/nav";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,14 @@ export function Header() {
           />
         </Link>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-5 lg:flex">
+          <a
+            href={siteConfig.phoneHref}
+            className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-cng-grey-700 transition-colors hover:text-cng-black"
+          >
+            <Phone className="h-4 w-4 text-cng-red" aria-hidden="true" />
+            {siteConfig.phone}
+          </a>
           <BookTableButton />
         </div>
 
