@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Motorbike } from "lucide-react";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { BookTableButton } from "@/components/ui/BookTableButton";
 import { HeroVideoBackground } from "@/components/home/HeroVideoBackground";
@@ -55,6 +55,7 @@ export function Hero() {
         >
           <BookTableButton />
           <PrimaryButton href="/tt-2027" variant="outline">
+            <Motorbike className="h-4 w-4" aria-hidden="true" />
             Explore TT Experiences
           </PrimaryButton>
         </motion.div>
