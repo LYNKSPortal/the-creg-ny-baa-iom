@@ -67,18 +67,11 @@ export function Header() {
               href={link.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "relative py-2 text-sm font-semibold uppercase tracking-wide text-white/85 transition-colors hover:text-white",
+                "py-2 text-sm font-semibold uppercase tracking-wide text-white/85 transition-colors hover:text-white",
                 active && "text-white",
               )}
             >
               {link.label}
-              <span
-                className={cn(
-                  "absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-white transition-transform duration-200",
-                  active && "scale-x-100",
-                )}
-                aria-hidden="true"
-              />
             </Link>
           );
         })}
