@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import MuxPlayer from "@mux/mux-player-react/lazy";
+import type MuxPlayerElement from "@mux/mux-player";
 import type { MuxCSSProperties } from "@mux/mux-player-react";
 import { heroVideo } from "@/data/video";
 
@@ -18,6 +19,7 @@ function getPrefersReducedMotion() {
  */
 export function HeroVideoBackground() {
   const [reducedMotion, setReducedMotion] = useState(getPrefersReducedMotion);
+  const playerRef = useRef<MuxPlayerElement | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -25,6 +27,38 @@ export function HeroVideoBackground() {
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
+
+  // Decorative background videos can freeze on a single frame if the browser
+  // pauses autoplay (e.g. low-power mode, tab backgrounding) or hls.js hits a
+  // recoverable stall/error. Since controls are hidden there's no way for a
+  // visitor to nudge it themselves, so resume playback automatically.
+  useEffect(() => {
+    if (reducedMotion) return;
+    const player = playerRef.current;
+    if (!player) return;
+
+    const resume = () => {
+      player.play()?.catch(() => {
+        // Autoplay can be legitimately blocked (e.g. battery saver); nothing
+        // more to do here without user interaction.
+      });
+    };
+
+    const onPause = () => resume();
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible" && player.paused) resume();
+    };
+
+    player.addEventListener("pause", onPause);
+    player.addEventListener("error", resume);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      player.removeEventListener("pause", onPause);
+      player.removeEventListener("error", resume);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [reducedMotion]);
 
   const posterUrl = `https://image.mux.com/${heroVideo.playbackId}/thumbnail.jpg?time=${heroVideo.posterTime}&width=1200`;
 
@@ -43,6 +77,7 @@ export function HeroVideoBackground() {
 
   return (
     <MuxPlayer
+      ref={playerRef}
       playbackId={heroVideo.playbackId}
       streamType="on-demand"
       autoPlay="muted"
