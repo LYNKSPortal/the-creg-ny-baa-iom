@@ -60,6 +60,60 @@ export default function HomePage() {
     <>
       <Hero />
 
+      <section aria-labelledby="creg-updates-heading" className="border-b border-cng-black/10 bg-cng-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <Reveal>
+            <div className="border-l-4 border-cng-red pl-6 sm:pl-8">
+              <h2 id="creg-updates-heading" className="font-display text-4xl font-bold uppercase leading-tight tracking-tight text-cng-black sm:text-5xl">
+                Creg Updates
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cng-grey-700">
+                News, events and the latest from the Creg Ny Baa.
+              </p>
+            </div>
+          </Reveal>
+          <article className="mt-10 overflow-hidden border border-cng-black/10 bg-cng-cream">
+            <header className="bg-cng-black px-6 py-8 text-white sm:px-10 sm:py-10">
+              <h3 className="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Christmas at The Creg</h3>
+              <p className="mt-3 max-w-2xl leading-relaxed text-white/80">Celebrate the festive season with family, friends and a warm welcome at The Creg.</p>
+            </header>
+            <div className="grid divide-y divide-cng-black/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+              <div className="flex flex-col p-6 sm:p-10">
+                <h4 className="font-display text-2xl font-bold uppercase text-cng-black">Book Your Christmas Meal</h4>
+                <p className="mt-4 leading-relaxed text-cng-grey-700">We have a menu for everyone, from children to senior citizens, including gluten-free and vegan options.</p>
+                <p className="mt-4 leading-relaxed text-cng-grey-700">Explore our Christmas menus and plan your festive get-together.</p>
+                <p className="mt-6 border-l-2 border-cng-red pl-4 font-semibold leading-relaxed text-cng-black">Booking is essential and a pre-order is required.</p>
+                <div className="mt-auto pt-8">
+                  <PrimaryButton href="/menus#christmas">View Christmas Menus</PrimaryButton>
+                </div>
+              </div>
+              <div className="p-6 sm:p-10">
+                <h4 className="font-display text-2xl font-bold uppercase text-cng-black">Enjoy a Festive Pub Lunch</h4>
+                <p className="mt-4 leading-relaxed text-cng-grey-700">Get together with family and friends over our main menu and specials board, with no set menu on these days.</p>
+                <h5 className="mt-6 text-xs font-semibold uppercase tracking-widest text-cng-red">Festive Food Serving Times</h5>
+                <dl className="mt-3 divide-y divide-cng-black/10 text-sm sm:text-base">
+                  <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-3"><dt className="font-medium text-cng-black">Christmas Eve</dt><dd className="text-cng-grey-700">12pm – 4.30pm</dd></div>
+                  <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-3"><dt className="font-medium text-cng-black">New Year&apos;s Eve</dt><dd className="text-cng-grey-700">12pm – 4.30pm</dd></div>
+                  <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-3"><dt className="font-medium text-cng-black">New Year&apos;s Day</dt><dd className="text-cng-grey-700">12pm – 3.30pm</dd></div>
+                </dl>
+                <p className="mt-4 text-sm leading-relaxed text-cng-grey-700">Dogs are welcome in our bar area.</p>
+              </div>
+            </div>
+            <div className="grid gap-4 border-t border-cng-black/10 bg-white p-6 sm:p-10 lg:grid-cols-[1fr_2fr] lg:gap-10">
+              <div>
+                <h4 className="font-display text-xl font-bold uppercase text-cng-black">Christmas Opening Hours</h4>
+                <p className="mt-2 font-semibold text-cng-red">Closed Christmas Day &amp; Boxing Day</p>
+              </div>
+              <p className="leading-relaxed text-cng-grey-700">We are open throughout the rest of the festive period. Booking is recommended. We may close early during quieter periods, so please call ahead to check.</p>
+            </div>
+            <footer className="border-t border-cng-black/10 px-6 py-6 text-center sm:px-10">
+              <p className="font-display text-xl font-bold uppercase text-cng-red">Merry Christmas!</p>
+              <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-cng-grey-700">From everyone at The Creg, we wish all our customers, old and new, a very Merry Christmas and a Happy New Year!</p>
+            </footer>
+          </article>
+        </div>
+      </section>
+
       {/* Introduction */}
       <section className="bg-cng-cream">
         <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
