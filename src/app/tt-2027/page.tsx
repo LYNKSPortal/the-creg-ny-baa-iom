@@ -9,9 +9,10 @@ import { ArchiveDisclosure } from "@/components/ui/ArchiveDisclosure";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { tt2026Packages } from "@/data/hospitality";
+import { tt2026Packages, ttViewing2026 } from "@/data/hospitality";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { tt2027Faqs } from "@/data/faqs";
-import { legalNotices } from "@/data/site";
+import { legalNotices, siteConfig } from "@/data/site";
 import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -124,8 +125,12 @@ export default function TT2027Page() {
               description="TT 2027 pricing hasn't been announced. The 2026 figures below are kept purely for reference and don't apply to TT 2027."
             />
           </Reveal>
+          <div className="mt-8 max-w-3xl">
+            <h3 className="font-display text-2xl font-bold uppercase text-cng-black">VIP Hospitality Experience</h3>
+            <p className="mt-4 leading-relaxed text-cng-grey-700">{ttViewing2026.intro}</p>
+          </div>
           <Reveal delay={0.1} className="mt-10">
-            <ArchiveDisclosure label="Show 2026 hospitality pricing (archived, not current)">
+            <ArchiveDisclosure defaultOpen label="2026 hospitality pricing (archived, not current)">
               <div className="grid gap-6 lg:grid-cols-2">
                 {tt2026Packages.map((pkg) => (
                   <HospitalityPackageCard key={pkg.id} pkg={pkg} />
@@ -133,6 +138,43 @@ export default function TT2027Page() {
               </div>
             </ArchiveDisclosure>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="border-t border-cng-black/10 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <SectionHeading
+            eyebrow="2026 Viewing Guide"
+            title="Grandstand & Viewing Platforms"
+            description="The following prices and ticket arrangements relate to TT 2026. TT 2027 arrangements and prices are coming soon."
+          />
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {ttViewing2026.options.map((option) => (
+              <div key={option.title} className="border border-cng-black/10 bg-cng-cream p-6 sm:p-8">
+                <h3 className="font-display text-2xl font-bold uppercase text-cng-black">{option.title}</h3>
+                {"price" in option && <p className="mt-3 text-xl font-semibold text-cng-red">{option.price}</p>}
+                <p className="mt-4 text-sm leading-relaxed text-cng-grey-700">{option.description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 border-l-4 border-cng-red pl-4 text-sm leading-relaxed text-cng-grey-700">{ttViewing2026.ownership}</p>
+          <div className="mt-16 border-t border-cng-black/10 pt-10">
+            <h3 className="font-display text-3xl font-bold uppercase text-cng-black">Practice Sessions: Viewing Information</h3>
+            <p className="mt-3 text-sm text-cng-grey-700">2026 arrangements for reference. Please confirm arrangements for 2027 with our team.</p>
+            <div className="mt-8 grid gap-8 sm:grid-cols-2">
+              {ttViewing2026.practice.map((item) => (
+                <div key={item.title}>
+                  <h4 className="font-display text-xl font-bold uppercase text-cng-black">{item.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-cng-grey-700">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-10 bg-cng-cream p-5 text-sm leading-relaxed text-cng-grey-700">For faster transactions, we recommend bringing cash due to high demand and network limitations.</p>
+          <div className="mt-8">
+            <p className="mb-4 text-sm text-cng-grey-700">For hospitality bookings and ticket enquiries, please email our team to discuss future availability.</p>
+            <PrimaryButton href={`mailto:${siteConfig.email}`}>Email {siteConfig.email}</PrimaryButton>
+          </div>
         </div>
       </section>
 

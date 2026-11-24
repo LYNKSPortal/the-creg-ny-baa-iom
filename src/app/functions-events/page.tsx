@@ -7,7 +7,7 @@ import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { veranda, funeralWakes, meetingPackages } from "@/data/hospitality";
+import { veranda, funeralWakes, meetingPackages, meetingFacilities } from "@/data/hospitality";
 import { buffetMenus, buffetNotes } from "@/data/buffets";
 import { functionsEventsFaqs } from "@/data/faqs";
 import { siteConfig } from "@/data/site";
@@ -76,6 +76,9 @@ export default function FunctionsEventsPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-8">
+                <PrimaryButton href="#catering">View Function &amp; Buffet Menus</PrimaryButton>
+              </div>
               <div className="mt-8 flex items-start gap-3 border border-cng-gold/40 bg-cng-gold/10 p-4 text-sm text-cng-grey-700">
                 <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-cng-gold" aria-hidden="true" />
                 <p>{veranda.accessibilityNote}</p>
@@ -113,13 +116,13 @@ export default function FunctionsEventsPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Business & Meetings"
-              title="Meetings & Conferences"
-              description="A refreshing change of scene for your next meeting: natural light, Mountain Road views and everything you need to present with confidence."
+              title="Meetings, Conferences & Training Days"
+              description={meetingFacilities.description}
             />
           </Reveal>
           <Reveal delay={0.1}>
             <ul className="mt-8 flex flex-wrap gap-3">
-              {["Presentation facilities", "Wi-Fi throughout", "Natural light & countryside views", "Free parking"].map((f) => (
+              {meetingFacilities.features.map((f) => (
                 <li key={f} className="flex items-center gap-2 rounded-sm bg-cng-grey-100 px-4 py-2.5 text-sm font-medium text-cng-grey-700">
                   <Check className="h-4 w-4 text-cng-red" aria-hidden="true" />
                   {f}
@@ -127,6 +130,17 @@ export default function FunctionsEventsPage() {
               ))}
             </ul>
           </Reveal>
+          <div className="mt-10 border border-cng-black/10 p-6 sm:p-8">
+            <h3 className="font-display text-2xl font-bold uppercase text-cng-black">Your Full-Day Package</h3>
+            <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+              {meetingFacilities.inclusions.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-cng-grey-700">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-cng-red" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {meetingPackages.map((pkg, i) => (
               <Reveal key={pkg.id} delay={0.1 * i}>
@@ -150,7 +164,7 @@ export default function FunctionsEventsPage() {
       </section>
 
       {/* Buffet & catering menus */}
-      <section className="border-t border-cng-black/10 bg-cng-cream">
+      <section id="catering" className="scroll-mt-40 border-t border-cng-black/10 bg-cng-cream">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
@@ -252,7 +266,7 @@ export default function FunctionsEventsPage() {
 
           <Reveal delay={0.2} className="mt-10 flex flex-wrap gap-4">
             <PrimaryButton href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Funeral Wake Enquiry")}`}>
-              Enquire With Care
+              Email {siteConfig.email}
             </PrimaryButton>
             <PrimaryButton href={siteConfig.phoneHref} variant="ghost">
               Call {siteConfig.phone}

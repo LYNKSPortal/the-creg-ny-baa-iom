@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 type ArchiveDisclosureProps = {
   label: string;
+  defaultOpen?: boolean;
   children: React.ReactNode;
 };
 
@@ -14,8 +15,8 @@ type ArchiveDisclosureProps = {
  * so it can't be mistaken for current information at a glance while
  * remaining easy to find for anyone who wants the reference material.
  */
-export function ArchiveDisclosure({ label, children }: ArchiveDisclosureProps) {
-  const [open, setOpen] = useState(false);
+export function ArchiveDisclosure({ label, children, defaultOpen = false }: ArchiveDisclosureProps) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className="border border-dashed border-cng-black/20">

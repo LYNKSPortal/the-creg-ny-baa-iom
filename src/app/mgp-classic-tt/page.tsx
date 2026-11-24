@@ -4,13 +4,13 @@ import { Trophy, Binoculars, GlassWater } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { HospitalityPackageCard } from "@/components/ui/HospitalityPackageCard";
-import { ArchiveDisclosure } from "@/components/ui/ArchiveDisclosure";
 import { ContactCTA } from "@/components/ui/ContactCTA";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { mgpClassicTt2026Packages } from "@/data/hospitality";
+import { mgpClassicTt2026Packages, mgp2026Viewing } from "@/data/hospitality";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { mgpFaqs } from "@/data/faqs";
-import { legalNotices } from "@/data/site";
+import { legalNotices, siteConfig } from "@/data/site";
 import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -104,13 +104,49 @@ export default function MgpClassicTtPage() {
             />
           </Reveal>
           <Reveal delay={0.1} className="mt-10">
-            <ArchiveDisclosure label="Show August 2026 hospitality pricing (archived, not current)">
+            <div>
               <div className="grid gap-6 lg:grid-cols-2">
                 {mgpClassicTt2026Packages.map((pkg) => (
                   <HospitalityPackageCard key={pkg.id} pkg={pkg} />
                 ))}
+                <div className="border border-cng-black/10 bg-white p-6 sm:p-8">
+                  <h3 className="font-display text-2xl font-bold uppercase text-cng-black">A Full Day of Racing</h3>
+                  <p className="mt-2 text-sm text-cng-grey-700">Wednesday 26 August 2026, archived schedule</p>
+                  <dl className="mt-6 divide-y divide-cng-black/10">
+                    {mgp2026Viewing.schedule.map((item) => (
+                      <div key={item.time} className="grid grid-cols-[5rem_1fr] gap-4 py-4 text-sm">
+                        <dt className="font-semibold text-cng-red">{item.time}</dt>
+                        <dd className="text-cng-grey-700">{item.race}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               </div>
-            </ArchiveDisclosure>
+              <div className="mt-6 border border-cng-black/10 bg-white p-6 sm:p-8">
+                <h3 className="font-display text-2xl font-bold uppercase text-cng-black">Balcony Viewing: Race Days</h3>
+                <p className="mt-3 text-cng-grey-700">View the racing from our world-famous balconies. August 2026 dates and prices:</p>
+                <ul className="mt-5 space-y-3 font-semibold text-cng-red">
+                  {mgp2026Viewing.balconyDays.map((day) => <li key={day}>{day}</li>)}
+                </ul>
+                <ul className="mt-6 grid list-inside list-disc gap-3 text-sm text-cng-grey-700 sm:grid-cols-2">
+                  {mgp2026Viewing.balconyInclusions.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                <div className="border border-cng-black/10 bg-white p-6 sm:p-8">
+                  <h3 className="font-display text-xl font-bold uppercase text-cng-black">Viewing Platforms: Race Days</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-cng-grey-700">{mgp2026Viewing.platforms}</p>
+                </div>
+                <div className="border border-cng-black/10 bg-white p-6 sm:p-8">
+                  <h3 className="font-display text-xl font-bold uppercase text-cng-black">Balcony Viewing: Qualifying</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-cng-grey-700">{mgp2026Viewing.qualifying}</p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <p className="mb-4 text-sm leading-relaxed text-cng-grey-700">For all booking enquiries, email our team. These August 2026 dates have passed; please contact us about future availability.</p>
+                <PrimaryButton href={`mailto:${siteConfig.email}`}>Email {siteConfig.email}</PrimaryButton>
+              </div>
+            </div>
           </Reveal>
           <p className="mt-6 text-xs text-cng-grey-500">{legalNotices.cashOnRaceDays}</p>
         </div>
