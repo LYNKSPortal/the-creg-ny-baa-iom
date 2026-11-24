@@ -40,13 +40,22 @@ export function Footer() {
               An Isle of Man icon: legendary TT race corner, traditional Manx pub, home-cooked
               food and premier events venue on the Mountain Road.
             </p>
-            <Image
-              src="/images/awards/manx-menu-award.png"
-              alt="Manx Menu Award Winner"
-              width={120}
-              height={120}
-              className="mt-5 h-16 w-16"
-            />
+            <div className="mt-5 flex flex-wrap items-center gap-4">
+              <Image
+                src="/awards/awards-for-exel.png"
+                alt="Isle of Man Newspapers Awards for Excellence Finalist"
+                width={120}
+                height={120}
+                className="h-24 w-24 object-contain"
+              />
+              <Image
+                src="/images/awards/manx-menu-award.png"
+                alt="Manx Menu Award Winner"
+                width={120}
+                height={120}
+                className="h-24 w-24 object-contain"
+              />
+            </div>
             <div className="mt-5 flex gap-3">
               {siteConfig.social.facebook ? (
                 <a

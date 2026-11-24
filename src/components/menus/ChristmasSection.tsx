@@ -15,8 +15,45 @@ export function ChristmasSection() {
   }
 
   return (
-    <section id="christmas" className="border-t border-cng-black/10 bg-cng-black">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+    <section id="christmas" className="relative isolate overflow-hidden border-t border-cng-black/10 bg-cng-black">
+      <svg aria-hidden="true" focusable="false" className="pointer-events-none absolute inset-x-0 top-0 h-80 w-full" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMin slice">
+        <defs>
+          <radialGradient id="festive-section-red" cx="35%" cy="25%">
+            <stop offset="0" stopColor="#f16b65" /><stop offset="0.45" stopColor="#b51f31" /><stop offset="1" stopColor="#510c1c" />
+          </radialGradient>
+          <radialGradient id="festive-section-gold" cx="35%" cy="25%">
+            <stop offset="0" stopColor="#fff0b9" /><stop offset="0.5" stopColor="#caa65b" /><stop offset="1" stopColor="#715220" />
+          </radialGradient>
+          <radialGradient id="festive-section-glow">
+            <stop offset="0" stopColor="#fff4cb" stopOpacity="0.8" /><stop offset="1" stopColor="#e8bb62" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <path d="M-20 0 Q150 90 300 10 T600 10 T900 10 T1220 0" fill="none" stroke="#264d3a" strokeWidth="18" />
+        <path d="M-20 0 Q150 90 300 10 T600 10 T900 10 T1220 0" fill="none" stroke="#497155" strokeWidth="26" strokeDasharray="2 9" />
+        <path d="M-20 18 Q150 110 300 28 T600 28 T900 28 T1220 18" fill="none" stroke="#aa8950" strokeWidth="1" />
+        {Array.from({ length: 25 }, (_, i) => {
+          const x = i * 50;
+          const y = 25 + Math.sin((x / 300) * Math.PI) * 32;
+          return <g key={`light-${i}`}><circle cx={x} cy={y} r="19" fill="url(#festive-section-glow)" /><circle cx={x} cy={y} r="3" fill="#ffe5a2" /></g>;
+        })}
+        {[35, 125, 255, 405, 565, 735, 850, 965, 1085, 1170].map((x, i) => {
+          const y = 65 + (i % 3) * 32;
+          const r = 12 + (i % 3) * 5;
+          return (
+            <g key={`bauble-${x}`}>
+              <path d={`M${x} 0V${y}`} stroke="#caa65b" strokeWidth="1" />
+              <rect x={x - 4} y={y - 5} width="8" height="7" rx="1" fill="#d2b474" />
+              <circle cx={x} cy={y + r} r={r} fill={`url(#festive-section-${i % 2 ? "gold" : "red"})`} />
+              <path d={`M${x - r + 3} ${y + r}h${r * 2 - 6}`} stroke="#ffe0a0" strokeOpacity="0.45" strokeWidth="2" />
+            </g>
+          );
+        })}
+        {[70, 195, 335, 495, 660, 790, 910, 1030, 1140].map((x, i) => (
+          <path key={`star-${x}`} transform={`translate(${x} ${185 + (i % 3) * 30})`} d="M0-8 2-2 8 0 2 2 0 8-2 2-8 0-2-2Z" fill="#e4c886" opacity="0.65" />
+        ))}
+      </svg>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-transparent via-cng-black/70 to-cng-black" />
+      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <Snowflake className="h-7 w-7 text-cng-gold" aria-hidden="true" />
         <SectionHeading
           eyebrow={christmasSeason.availability}

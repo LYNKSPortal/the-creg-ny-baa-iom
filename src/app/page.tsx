@@ -8,7 +8,6 @@ import { ContactCTA } from "@/components/ui/ContactCTA";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { FaqSection } from "@/components/seo/FaqSection";
-import { ChristmasSection } from "@/components/menus/ChristmasSection";
 import { homeFaqs } from "@/data/faqs";
 import { pageOpenGraph } from "@/lib/seo";
 
@@ -73,9 +72,60 @@ export default function HomePage() {
             </div>
           </Reveal>
           <article className="mt-10 overflow-hidden border border-cng-black/10 bg-cng-cream">
-            <header className="bg-cng-black px-6 py-8 text-white sm:px-10 sm:py-10">
-              <h3 className="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Christmas at The Creg</h3>
-              <p className="mt-3 max-w-2xl leading-relaxed text-white/80">Celebrate the festive season with family, friends and a warm welcome at The Creg.</p>
+            <header className="relative isolate overflow-hidden bg-cng-black px-6 py-12 text-white sm:px-10 sm:py-14">
+              <svg aria-hidden="true" focusable="false" className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="christmas-bauble-red" cx="35%" cy="25%">
+                    <stop offset="0" stopColor="#f16b65" />
+                    <stop offset="0.45" stopColor="#b51f31" />
+                    <stop offset="1" stopColor="#510c1c" />
+                  </radialGradient>
+                  <radialGradient id="christmas-bauble-gold" cx="35%" cy="25%">
+                    <stop offset="0" stopColor="#fff0b9" />
+                    <stop offset="0.5" stopColor="#caa65b" />
+                    <stop offset="1" stopColor="#715220" />
+                  </radialGradient>
+                  <radialGradient id="christmas-light">
+                    <stop offset="0" stopColor="#fff4cb" stopOpacity="0.8" />
+                    <stop offset="1" stopColor="#e8bb62" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                <path d="M-20 0 Q150 90 300 10 T600 10 T900 10 T1220 0" fill="none" stroke="#264d3a" strokeWidth="18" />
+                <path d="M-20 0 Q150 90 300 10 T600 10 T900 10 T1220 0" fill="none" stroke="#497155" strokeWidth="26" strokeDasharray="2 9" />
+                <path d="M-20 18 Q150 110 300 28 T600 28 T900 28 T1220 18" fill="none" stroke="#aa8950" strokeWidth="1" />
+                {Array.from({ length: 25 }, (_, i) => {
+                  const x = i * 50;
+                  const y = 25 + Math.sin((x / 300) * Math.PI) * 32;
+                  return (
+                    <g key={`light-${i}`}>
+                      <circle cx={x} cy={y} r="19" fill="url(#christmas-light)" />
+                      <circle cx={x} cy={y} r="3" fill="#ffe5a2" />
+                    </g>
+                  );
+                })}
+                {[35, 125, 255, 405, 565, 735, 850, 965, 1085, 1170].map((x, i) => {
+                  const y = 65 + (i % 3) * 32;
+                  const r = 12 + (i % 3) * 5;
+                  return (
+                    <g key={`bauble-${x}`}>
+                      <path d={`M${x} 0V${y}`} stroke="#caa65b" strokeWidth="1" />
+                      <rect x={x - 4} y={y - 5} width="8" height="7" rx="1" fill="#d2b474" />
+                      <circle cx={x} cy={y + r} r={r} fill={`url(#christmas-bauble-${i % 2 ? "gold" : "red"})`} />
+                      <path d={`M${x - r + 3} ${y + r}h${r * 2 - 6}`} stroke="#ffe0a0" strokeOpacity="0.45" strokeWidth="2" />
+                    </g>
+                  );
+                })}
+                {[70, 195, 335, 495, 660, 790, 910, 1030, 1140].map((x, i) => (
+                  <g key={`star-${x}`} transform={`translate(${x} ${155 + (i % 3) * 25})`} fill="#e4c886" opacity="0.7">
+                    <path d="M0-8 2-2 8 0 2 2 0 8-2 2-8 0-2-2Z" />
+                  </g>
+                ))}
+              </svg>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cng-black/95 via-cng-black/75 to-transparent" />
+              <div className="relative max-w-2xl">
+                <h3 className="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Christmas at The Creg</h3>
+                <p className="mt-3 leading-relaxed text-white/90">Celebrate the festive season with family, friends and a warm welcome at The Creg.</p>
+              </div>
             </header>
             <div className="grid divide-y divide-cng-black/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
               <div className="flex flex-col p-6 sm:p-10">
@@ -84,7 +134,7 @@ export default function HomePage() {
                 <p className="mt-4 leading-relaxed text-cng-grey-700">Explore our Christmas menus and plan your festive get-together.</p>
                 <p className="mt-6 border-l-2 border-cng-red pl-4 font-semibold leading-relaxed text-cng-black">Booking is essential and a pre-order is required.</p>
                 <div className="mt-auto pt-8">
-                  <PrimaryButton href="/menus#christmas">View Christmas Menus</PrimaryButton>
+                  <PrimaryButton href="/christmas">Explore Christmas at the Creg</PrimaryButton>
                 </div>
               </div>
               <div className="p-6 sm:p-10">
@@ -216,8 +266,6 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-
-      <ChristmasSection />
 
       <FaqSection items={homeFaqs} title="Frequently Asked Questions" eyebrow="Good to Know" />
 

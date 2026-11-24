@@ -13,6 +13,7 @@ type PageMeta = {
 const pages: PageMeta[] = [
   { href: "/", changeFrequency: "weekly", priority: 1 },
   { href: "/menus", changeFrequency: "weekly", priority: 0.9 },
+  { href: "/christmas", changeFrequency: "monthly", priority: 0.7 },
   { href: "/functions-events", changeFrequency: "monthly", priority: 0.8 },
   { href: "/tt-2027", changeFrequency: "weekly", priority: 0.9 },
   { href: "/mgp-classic-tt", changeFrequency: "monthly", priority: 0.7 },
