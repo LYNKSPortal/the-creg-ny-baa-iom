@@ -111,6 +111,41 @@ h4,
   text-wrap: balance;
 }
 
+/* JS-independent entrance animation for the hero. `both` fill mode keeps
+   elements hidden during their delay then visible afterwards, and works
+   even on browsers where the JS bundle never executes. */
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: hero-fade 0.7s ease-out both;
+}
+
+/* Scroll-reveal: these classes are only applied client-side by Reveal once
+   it has confirmed IntersectionObserver is available, so no-JS and older
+   browsers simply see the content. */
+.reveal-pre {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Placeholder imagery pattern: used until real venue photography is supplied */
 .placeholder-art {
   background-image:

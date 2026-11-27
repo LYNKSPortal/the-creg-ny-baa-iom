@@ -76,8 +76,19 @@ export function HeroVideoBackground() {
   }
 
   return (
-    <MuxPlayer
-      ref={playerRef}
+    <div className="absolute inset-0">
+      {/* Static poster underneath: still visible if the player JS can't run
+          on an older browser, so the hero never renders as an empty void. */}
+      <Image
+        src={posterUrl}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <MuxPlayer
+        ref={playerRef}
       playbackId={heroVideo.playbackId}
       streamType="on-demand"
       autoPlay="muted"
@@ -101,5 +112,6 @@ export function HeroVideoBackground() {
         } satisfies MuxCSSProperties
       }
     />
+    </div>
   );
 }
